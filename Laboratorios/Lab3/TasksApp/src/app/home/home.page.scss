@@ -29,11 +29,3 @@
 .taskDone {
   text-decoration-line: line-through;
  }
-
-.taskDone ion-icon {
-  name: checkmark-circle-outline;
-}
-
-:not(.taskDone) ion-icon {
-  name: checkmark-circle;
-}

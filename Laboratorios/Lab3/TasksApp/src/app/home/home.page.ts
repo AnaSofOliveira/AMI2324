@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonItemSliding } from '@ionic/angular';
-import { Task } from './task';
 import { FireserviceService } from '../fire-service.service';
+import { Task } from './task';
 
 @Component({
   selector: 'app-home',
@@ -10,15 +10,9 @@ import { FireserviceService } from '../fire-service.service';
 })
 export class HomePage implements OnInit{
 
-  tasks: Array<any> = [];
+  tasks: Array<Task> = [];
 
   constructor(private fser: FireserviceService) {
-
-    this.tasks = [
-      {title: 'Milk', status: 'open'},
-      {title: 'Eggs', status: 'open'},
-      {title: 'Pancake Mix', status: 'open'}
-      ];
   }
 
   ngOnInit(): void {
