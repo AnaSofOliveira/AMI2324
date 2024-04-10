@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-title>Playing</ion-title>
+
+  </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
+  <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(getValue())'
+  width="560" height="315" frameborder="0" webkitallowfullscreen
+  mozallowfullscreen allowfullscreen></iframe>
+  <h3>Link: </h3> {{value}}
+
+  <ion-button expand="block" color="danger" fill="clear" (click)="dismiss()">
+    <ion-icon name="close-outline"/>Fechar
+  </ion-button>
+  </ion-content>

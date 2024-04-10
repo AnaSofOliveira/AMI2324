@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Benfica
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!--<ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>-->
+
+  <ion-card>
+    <img alt="Silhouette of mountains" src="https://images.sportsbrief.com/images/720/81ac3337e0465a21.webp?v=1" />
+    <ion-card-header>
+      <ion-card-subtitle>SLB</ion-card-subtitle>
+      <ion-card-title>Bem-vindo à Cathedral</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      O Sport Lisboa e Benfica foi fundado a 28 de fevereiro de 1904, com o nome de Sport Lisboa. Depois de um treino matinal, nuns terrenos em Belém, realizou-se, da parte da tarde, uma reunião na vizinha Farmácia Franco, na qual estiveram presentes 24 elementos, entre os quais os dez do treino da manhã. São considerados os fundadores do Clube.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list lines="none">
+    <ion-item href="https://www.slbenfica.pt/">
+      <img src="/assets/icon/benfica-logo.png" alt="Benfica" style="height: 20px; margin: 5px;"/>
+      <ion-label>Site Oficial</ion-label>
+    </ion-item>
+    <ion-item href="https://pt.wikipedia.org/wiki/Sport_Lisboa_e_Benfica">
+      <img src="/assets/icon/wikipedia.png" alt="Wikipedia" style="height: 20px; margin: 5px;" />
+      <ion-label>Wikipedia Page</ion-label>
+    </ion-item>
+    <ion-item href="https://resultados.fpf.pt/Competition/Details?competitionId=23795&seasonId=103">
+      <img src="/assets/icon/fpf.png" alt="FPF" style="height: 20px; margin: 5px;" />
+      <ion-label>Federação Portuguesa de Futebol</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button size="small">
+      <ion-icon name="logo-ionics"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-item href="https://ionicframework.com/docs/theming/basics">
+        <ion-label>Theme Your App</ion-label>
+        <ion-icon name="color-fill"></ion-icon>
+      </ion-item>
+      <ion-item href="https://ionicframework.com/docs/layout/structure">
+        <ion-label>Change Your App Layout</ion-label>
+        <ion-icon name="grid"></ion-icon>
+      </ion-item>
+      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
+        <ion-label>Scaffold Out Your App</ion-label>
+        <ion-icon name="build"></ion-icon>
+      </ion-item>
+      <ion-item href="https://ionicframework.com/docs/">
+        <ion-label>Ionic Documentation</ion-label>
+        <ion-icon name="book"></ion-icon>
+      </ion-item>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
