@@ -1,18 +1,40 @@
 
 <ion-content padding class="form-content">
-  <form class="form">
-    <ion-item>
-      <ion-label position="floating" color="primary">Email</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
 
-    <ion-item>
-      <ion-label position="floating" color="primary">Password</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
+  <!-- Title -->
+  <h1 class="title">Registe-se!</h1>
+  <!-- Subtitle -->
+  <p class="subtitle">Faça o seu registo e descubra uma nova realidade futebolística</p>
 
-    <ion-button class="submit-btn" expand="block" type="submit">Register</ion-button>
-  </form>
-  <p class="go-to-login">Already have an account? <a>Try to Log In.</a></p>
+  <div class="registo-form">
+    <mat-form-field>
+      <mat-icon>mail</mat-icon>
+      <mat-label>E-mail</mat-label>
+      <input matInput placeholder="email@domain.com" [formControl]="email" (blur)="updateEmailErrorMessage()" required />
+      @if (email.invalid) {
+        <mat-error>{{errorMessageEmail()}}</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="***********" [formControl]="password" (blur)="updatePasswordErrorMessage()" required />
+      @if (password.invalid) {
+        <mat-error>{{errorMessagePassword()}}</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Confirme a password</mat-label>
+      <input matInput placeholder="***********" [formControl]="confirmPassword" (blur)="updateConfirmPasswordErrorMessage()" required />
+      @if (confirmPassword.invalid) {
+        <mat-error>{{errorMessageConfirmPassword()}}</mat-error>
+      }
+    </mat-form-field>
+  </div>
+
+  <mat-divider role="separator"></mat-divider>
+
+  <p class="go-to-login"><a>Login </a> se tiver conta criada</p>
 </ion-content>
 
