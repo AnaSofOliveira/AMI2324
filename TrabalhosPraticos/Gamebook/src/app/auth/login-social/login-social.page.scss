@@ -1,0 +1,44 @@
+.spinner{
+    transform: scale(2);
+    display: none;
+  }
+
+  .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 25%;
+    padding-bottom: 30%;
+    align-items: center;
+    height: 100%;
+  }
+
+.googleBtn{
+  background-color: #C7EEA9 !important;
+  color: black !important;
+}
+
+.sizer{
+  height: 16px;
+}
+
+.dividerOr{
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.mat-divider{
+  width: 45%;
+  color: white;
+}
+
+.action{
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

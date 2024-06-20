@@ -1,2 +1,20 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+ion-spinner {
+  --color: #C7EEA9;
+}
+
+h2{
+  color: white;
+  text-shadow:
+  -1px -1px 0 #466730,
+   1px -1px 0 #466730,
+  -1px  1px 0 #466730,
+   1px  1px 0 #466730;
+  font-family: 'Roboto';
+}
+
+:root{
+  --ion-color-primary: #C7EEA9;
+}
+

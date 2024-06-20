@@ -23,7 +23,7 @@ export class RegistoPage{
 
 readonly email = new FormControl('', [Validators.required, Validators.email]);
 readonly password = new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]);
-readonly confirmPassword = new FormControl('', [this.passwordValidator]);
+readonly confirmPassword = new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]);
 
 errorMessageEmail = signal('');
 errorMessagePassword = signal('');
@@ -65,8 +65,15 @@ updatePasswordErrorMessage() {
   }
 }
 
-passwordValidator() {
-  
+updateConfirmPasswordErrorMessage() {
+  if (this.confirmPassword.hasError('required')) {
+    this.errorMessageConfirmPassword.set('Introduzir a password');
+  } else if (this.confirmPassword.hasError('password')) {
+    this.errorMessagePassword.set('As passwords não coincidem');
+    this.errorMessageConfirmPassword.set('As passwords não coincidem');
+  } else {
+    this.errorMessageConfirmPassword.set('');
+  }
 }
 
 }
