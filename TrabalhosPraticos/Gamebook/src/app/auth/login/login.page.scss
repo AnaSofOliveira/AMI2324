@@ -10,6 +10,7 @@ justify-content: space-between;
 padding-top: 25%;
 padding-bottom: 5%;
 align-items: center;
+text-align: center;
 height: 100%;
 }
 
@@ -63,17 +64,9 @@ form{
   flex-direction: column;
   align-items: center;
   margin-bottom: 30%;
-  height: 150px;
 }
 
 ion-item{
   margin-bottom: 5px;
   border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-}
-
-
-.input{
-  width: 80%;
 }

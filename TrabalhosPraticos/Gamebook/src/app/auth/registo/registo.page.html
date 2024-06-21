@@ -1,35 +1,27 @@
 <app-auth-layout>
   <div class="content">
     <div>
-      <h2>Registe-se!</h2>
+      <h2>Registe-se</h2>
       <p>Faça o seu registo e descubra uma nova realidade futebolística</p>
     </div>
-
     <form>
-
-      <ion-item>
         <ion-item>
-          <ion-input label="Email" labelPlacement="stacked" placeholder="E-mail" formControlName="email">
+          <ion-input label="Email" labelPlacement="stacked"  formControlName="email" [clearInput]="true">
             <ion-icon slot="start" name="mail-outline" aria-hidden="true"></ion-icon>
           </ion-input>
         </ion-item>
-      </ion-item>
 
-      <ion-item>
         <ion-item>
-          <ion-input label="Password" labelPlacement="stacked" placeholder="Password" formControlName="password">
+          <ion-input label="Palavra-passe" labelPlacement="stacked" formControlName="password" [clearInput]="true">
             <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
           </ion-input>
         </ion-item>
-      </ion-item>
 
-      <ion-item>
         <ion-item>
-          <ion-input label="Confirme a Password" labelPlacement="stacked" placeholder="Confirme a password">
-            <ion-icon name="refresh-outline"></ion-icon>
+          <ion-input label="Confirme a palavra-passe" labelPlacement="stacked" formControlName="confirme" [clearInput]="true">
+            <ion-icon slot="start" name="refresh-outline" aria-hidden="true"></ion-icon>
           </ion-input>
         </ion-item>
-      </ion-item>
     </form>
 
     <div class="action">
