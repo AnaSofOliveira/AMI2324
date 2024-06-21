@@ -15,7 +15,7 @@ export class SplashPage {
   constructor(private router: Router) { }
 
 
-  navigateToLogin() {
+  navigateToLoginPage() {
     this.router.navigate(['/login-social'], { replaceUrl: true });
   }
 }

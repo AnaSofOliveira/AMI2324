@@ -4,6 +4,7 @@ import { AuthLayoutComponent } from 'src/app/layout/auth-layout/auth-layout.comp
 import { IonContent, IonSpinner } from "@ionic/angular/standalone";
 import {MatButtonModule} from '@angular/material/button';
 import { MatDivider } from '@angular/material/divider';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,9 @@ import { MatDivider } from '@angular/material/divider';
 })
 export class LoginSocialPage {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-
+  navigateToRegisterPage() {
+    this.router.navigate(['/registo'], { replaceUrl: true });
+  }
 }

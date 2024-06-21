@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'login-social',
     loadChildren: () => import('./auth/login-social/login-social.module').then( m => m.LoginSocialPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
+  },
 
 ];
 
