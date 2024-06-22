@@ -1,8 +1,9 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
 :root{
-  --ion-color-primary: #C7EEA9;
+  --ion-color-primary: #466730;
   --ion-item-background: #fff !important;
+  --ion-color-contrast: #466730 !important;
 }
 
 body{
@@ -45,5 +46,7 @@ ion-icon{
       1px  1px 0 #466730;
       text-size-adjust: 10px;
   }
+
+
 }
 

@@ -19,10 +19,11 @@
     "target": "es2022",
     "module": "es2020",
     "lib": [
-      "es2018", 
+      "es2018",
       "dom"
     ],
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "skipLibCheck": true, // This is a temporary fix for the issue with the Angular 13 upgrade
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

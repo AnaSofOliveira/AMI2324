@@ -5,6 +5,7 @@ import { IonContent, IonSpinner } from "@ionic/angular/standalone";
 import {MatButtonModule} from '@angular/material/button';
 import { MatDivider } from '@angular/material/divider';
 import { Router } from '@angular/router';
+import { FireAuthService } from 'src/app/core/services/auth/fire-auth.service';
 
 
 @Component({
@@ -16,9 +17,25 @@ import { Router } from '@angular/router';
 })
 export class LoginSocialPage {
 
-  constructor(private router: Router) { }
+  errorMessage: string = '';
 
-  navigateToRegisterPage() {
+  constructor(private router: Router, private authService: FireAuthService) { }
+
+  loginWithGoogle() {
+    this.authService.loginWithGoogle().then(res => {
+      console.log("Resultado: " + res);
+      this.goToHomePage()
+    }, err => {
+      console.log("Erro: " + err);
+      this.errorMessage = "Erro ao efetuar o login!"
+    })
+  }
+
+  goToHomePage(){
+    this.router.navigate(['/home'], { replaceUrl: true });
+  }
+
+  goToRegisterPage() {
     this.router.navigate(['/registo'], { replaceUrl: true });
   }
 }

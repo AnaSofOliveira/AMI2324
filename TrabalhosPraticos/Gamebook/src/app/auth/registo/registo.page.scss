@@ -4,14 +4,13 @@
 }
 
 .content{
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-padding-top: 25%;
-padding-bottom: 5%;
-align-items: center;
-text-align: center;
-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  align-items: center;
+  text-align: center;
+  height: 100%;
 }
 
 .content div p{
@@ -39,8 +38,6 @@ color: white;
 
 .action{
 width: 100%;
-padding-left: 16px;
-padding-right: 16px;
 display: flex;
 justify-content: center;
 flex-direction: column;
@@ -62,17 +59,38 @@ width: 100%;
 margin: 0px;
 }
 
+// alterações para o registo
+
 form{
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 30%;
-
 }
 
-ion-item{
-  margin-bottom: 5px;
-  border-radius: 10px;
+ion-input{
+  --background: #ffffff;
+  --border-radius: 50px !important;
+}
+
+ion-icon{
+  font-size: 24px;
+}
+
+// manter a fonte e tamanho padrão
+a, P{
+  font-size: 14px;
+  font-family: 'roboco', sans-serif;
+}
+
+h6{
+  font-size: 22px;
+  font-family: 'roboco', sans-serif;
+}
+
+.backContainer{
+  width: 100%;
+  text-align: left;
 }
 

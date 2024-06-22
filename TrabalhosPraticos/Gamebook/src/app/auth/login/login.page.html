@@ -1,28 +1,49 @@
 <app-auth-layout>
   <div class="content">
+    <div class="backContainer">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </div>
     <div>
       <h2>Gamebook</h2>
-      <p>Faça login para continuar</p>
+      <h6>Faça login para continuar</h6> <!-- se é titulo deve ser H -->
     </div>
 
-    <form>
-        <ion-item>
-          <ion-input label="Email" labelPlacement="stacked" placeholder="Insert your e-mail">
-            <ion-icon slot="start" name="mail-outline" aria-hidden="true"></ion-icon>
-          </ion-input>
-        </ion-item>
+    <form [formGroup]="validators" (ngSubmit)="login(validators.value)">
+      <ion-col size="12" class="ion-margin-bottom">
+        <ion-input type="email" label="Email" labelPlacement="stacked" placeholder="Insert your e-mail" fill="outline" shape="round" color="primary" [clearInput]="true" formControlName="email">
+          <ion-icon slot="start" name="mail-outline" aria-hidden="true"></ion-icon>
+        </ion-input>
 
-        <ion-item>
-          <ion-input label="Password" labelPlacement="stacked" placeholder="Insert your password">
-            <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
-          </ion-input>
-        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.email">
+            <div class="error-message" *ngIf="validators.get('email')?.hasError(validation.type) && (validators.get('email')?.dirty || validators.get('email')?.touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+
+        <div style="height: 24px;"></div>
+        <ion-input type="password" label="Password" labelPlacement="stacked" placeholder="Insert your password" fill="outline" shape="round"  [counter]="true" [maxlength]="20" [clearInput]="true" formControlName="password">
+          <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+        </ion-input>
+
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.password">
+            <div class="error-message" *ngIf="validators.get('password')?.hasError(validation.type) && (validators.get('password')?.dirty || validators.get('password')?.touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </ion-col>
+
+      <div>
+        <button class="googleBtn" mat-flat-button type="submit">Entrar</button>
+      </div>
     </form>
 
     <div class="action">
-      <button class="googleBtn" mat-flat-button>Entrar</button>
-      <div class="sizer"></div>
 
+      <div class="sizer"></div>
       <div class="dividerOr">
         <mat-divider></mat-divider>
         <div style="width: 5px;"></div>
@@ -33,7 +54,7 @@
 
       <div class="sizer"></div>
       <div class="links">
-        <p><a href="./registo">Registe-se</a> se não tiver uma conta</p>
+        <p><a (click)="goToRegisterPage()">Registe-se</a> se não tiver uma conta</p>
       </div>
 
     </div>
