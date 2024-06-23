@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'jogo-detalhes',
+    loadChildren: () => import('./modules/jogo-detalhes/jogo-detalhes.module').then( m => m.JogoDetalhesPageModule)
+  },
 
 ];
 

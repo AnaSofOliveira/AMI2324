@@ -1,0 +1,234 @@
+<ion-content>
+  <ion-row>
+    <ion-col size="5">
+      <ion-card>
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <ion-card-header>
+          <ion-card-title>Arouca</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  <ion-col size="2">
+    <h3>X</h3>
+  </ion-col>
+    <ion-col size="5">
+      <ion-card>
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <ion-card-header>
+          <ion-card-title>Benfica</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4">
+      <p>Geral</p>
+    </ion-col>
+    <ion-col size="4">
+      <p>Plantel</p>
+    </ion-col>
+    <ion-col size="4">
+      <p>Resultados</p>
+    </ion-col>
+  </ion-row>
+      <swiper-container #swiper (slidechange)="onSlideChange()">
+        <swiper-slide>
+          <ion-col>
+            <ion-row>
+              <ion-col size="4">
+                <p><b>Competição: </b> </p>
+              </ion-col>
+              <ion-col>
+                <p>Liga Bwin</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                <p><b>Data/hora: </b></p>
+              </ion-col>
+              <ion-col>
+                <p>24/Maio 19:00</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4">
+                <p><b>Localização: </b></p>
+              </ion-col>
+              <ion-col>
+                <p>Estádio Municipal de Arouca</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <div id="map"></div>
+            </ion-row>
+          </ion-col>
+        </swiper-slide>
+        <swiper-slide>
+          <ion-col>
+          <ion-row>
+            <h3>Arouca</h3>
+          </ion-row>
+          <ion-row>
+            <h6>Guarda-Redes</h6>
+            <ion-col size="5">
+              <app-info-jogador></app-info-jogador>
+            </ion-col>
+            <ion-col size="5">
+              <app-info-jogador></app-info-jogador>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <h6>Defesas</h6>
+            <ion-col size="5">
+              <app-info-jogador></app-info-jogador>
+            </ion-col>
+            <ion-col size="5">
+              <app-info-jogador></app-info-jogador>
+            </ion-col>
+            <ion-col size="5">
+              <app-info-jogador></app-info-jogador>
+            </ion-col>
+            <ion-col size="5">
+              <app-info-jogador></app-info-jogador>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <h6>Médios</h6>
+            <ion-col size="5">
+              <app-info-jogador></app-info-jogador>
+            </ion-col>
+            <ion-col size="5">
+              <app-info-jogador></app-info-jogador>
+            </ion-col>
+            <ion-col size="5">
+              <app-info-jogador></app-info-jogador>
+            </ion-col>
+            <ion-col size="5">
+              <app-info-jogador></app-info-jogador>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <h6>Avançados</h6>
+            <ion-col size="5">
+              <app-info-jogador></app-info-jogador>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        </swiper-slide>
+        <swiper-slide>
+          <ion-col>
+          <ion-row>
+            <h3>Arouca</h3>
+          </ion-row>
+          <ion-row>
+            <ion-col size="3">
+              <p>Arouca</p>
+            </ion-col>
+            <ion-col size="1">
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            </ion-col>
+            <ion-col size="4">
+              <p>1 - 3</p>
+            </ion-col>
+            <ion-col size="1">
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            </ion-col>
+            <ion-col size="3">
+              <p>Vitória SC</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="3">
+              <p>Benfica</p>
+            </ion-col>
+            <ion-col size="1">
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            </ion-col>
+            <ion-col size="4">
+              <p>5 - 0</p>
+            </ion-col>
+            <ion-col size="1">
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            </ion-col>
+            <ion-col size="3">
+              <p>Arouca</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="3">
+              <p>Gil Vicente</p>
+            </ion-col>
+            <ion-col size="1">
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            </ion-col>
+            <ion-col size="4">
+              <p>2 - 2</p>
+            </ion-col>
+            <ion-col size="1">
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            </ion-col>
+            <ion-col size="3">
+              <p>Arouca</p>
+            </ion-col>
+          </ion-row>
+
+
+          <ion-row>
+            <h3>Benfica</h3>
+          </ion-row>
+          <ion-row>
+            <ion-col size="3">
+              <p>Benfica</p>
+            </ion-col>
+            <ion-col size="1">
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            </ion-col>
+            <ion-col size="4">
+              <p>1 - 1</p>
+            </ion-col>
+            <ion-col size="1">
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            </ion-col>
+            <ion-col size="3">
+              <p>Rio Ave</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="3">
+              <p>Benfica</p>
+            </ion-col>
+            <ion-col size="1">
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            </ion-col>
+            <ion-col size="4">
+              <p>5 - 0</p>
+            </ion-col>
+            <ion-col size="1">
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            </ion-col>
+            <ion-col size="3">
+              <p>Arouca</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="3">
+              <p>Famalicão</p>
+            </ion-col>
+            <ion-col size="1">
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            </ion-col>
+            <ion-col size="4">
+              <p>2 - 0</p>
+            </ion-col>
+            <ion-col size="1">
+              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            </ion-col>
+            <ion-col size="3">
+              <p>Benfica</p>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        </swiper-slide>
+    </swiper-container>
+
+</ion-content>

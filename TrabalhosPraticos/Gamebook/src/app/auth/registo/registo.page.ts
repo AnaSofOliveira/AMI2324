@@ -28,10 +28,6 @@ export class RegistoPage implements OnInit{
     'password': [
       { type: 'required', message: 'Preencher password' },
       { type: 'minlength', message: 'Password tem de conter mais que 5 caracteres.' }
-    ],
-    'confirmPassword': [
-      {type: 'minlength', message: 'Password tem de conter mais que 5 caracteres.' },
-      {type: 'mismatch', message: 'As passwords não coincidem.'}
     ]
   };
 
@@ -43,8 +39,7 @@ export class RegistoPage implements OnInit{
       {
         email: new FormControl('', Validators.compose([Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])),
         password: new FormControl('', Validators.compose([Validators.minLength(5),Validators.required])),
-        passwordConfirm: new FormControl('', Validators.compose([Validators.minLength(5), this.passwordMatchValidator])),
-      },
+      }
     );
   }
 
@@ -58,16 +53,16 @@ export class RegistoPage implements OnInit{
     })
   }
 
-  passwordMatchValidator(formGroup: any){
-    return formGroup.get('password').value === formGroup.get('passwordConfirm').value ? null : {'mismatch': true};
-  }
-
   goToLoginPage(){
     this.router.navigate(['/login'], { replaceUrl: true });
   }
 
   goToHomePage(){
     this.router.navigate(['/home'], { replaceUrl: true });
+  }
+
+  goToSocialLoginPage(){
+    this.router.navigate(['/login-social'], { replaceUrl: true });
   }
 
 }

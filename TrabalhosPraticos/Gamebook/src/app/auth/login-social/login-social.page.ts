@@ -38,4 +38,8 @@ export class LoginSocialPage {
   goToRegisterPage() {
     this.router.navigate(['/registo'], { replaceUrl: true });
   }
+
+  goToLoginPage() {
+    this.router.navigate(['/login'], { replaceUrl: true });
+  }
 }

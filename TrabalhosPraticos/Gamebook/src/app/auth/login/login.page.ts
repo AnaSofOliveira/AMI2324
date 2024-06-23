@@ -62,4 +62,8 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/home'], { replaceUrl: true });
   }
 
+  goToSocialLoginPage(){
+    this.router.navigate(['/login-social'], { replaceUrl: true });
+  }
+
 }
