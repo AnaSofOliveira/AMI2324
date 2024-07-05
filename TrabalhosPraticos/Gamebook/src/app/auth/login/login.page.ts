@@ -46,16 +46,14 @@ export class LoginPage implements OnInit {
 
   login(value: {email: any; password: any;}){
     this.authService.login(value).then(res => {
-      console.log("Resultado: " + res);
-      this.goToHomePage()
+      this.goToHomePage();
     }, err => {
-      console.log("Erro: " + err);
       this.errorMessage = "Erro ao efetuar o login!"
     })
   }
 
   goToRegisterPage(){
-    this.router.navigate(['/registo'], { replaceUrl: true });
+    this.router.navigate(['/registo']);
   }
 
   goToHomePage(){
@@ -63,7 +61,7 @@ export class LoginPage implements OnInit {
   }
 
   goToSocialLoginPage(){
-    this.router.navigate(['/login-social'], { replaceUrl: true });
+    this.router.navigate(['/login-social']);
   }
 
 }

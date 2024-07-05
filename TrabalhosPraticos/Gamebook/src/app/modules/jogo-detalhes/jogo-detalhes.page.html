@@ -1,119 +1,30 @@
 <ion-content>
+  <div *ngIf="jogo is not null" >
+    <app-info-equipas [jogo]="jogo"></app-info-equipas>
+  </div>
   <ion-row>
-    <ion-col size="5">
-      <ion-card>
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-        <ion-card-header>
-          <ion-card-title>Arouca</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-col>
-  <ion-col size="2">
-    <h3>X</h3>
-  </ion-col>
-    <ion-col size="5">
-      <ion-card>
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-        <ion-card-header>
-          <ion-card-title>Benfica</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col size="4">
+    <ion-col size="4" style="display: flex; justify-content: center;">
       <p>Geral</p>
     </ion-col>
-    <ion-col size="4">
+    <ion-col size="4" style="display: flex; justify-content: center;">
       <p>Plantel</p>
     </ion-col>
-    <ion-col size="4">
+    <ion-col size="4" style="display: flex; justify-content: center;">
       <p>Resultados</p>
     </ion-col>
   </ion-row>
       <swiper-container #swiper (slidechange)="onSlideChange()">
         <swiper-slide>
-          <ion-col>
-            <ion-row>
-              <ion-col size="4">
-                <p><b>Competição: </b> </p>
-              </ion-col>
-              <ion-col>
-                <p>Liga Bwin</p>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size="4">
-                <p><b>Data/hora: </b></p>
-              </ion-col>
-              <ion-col>
-                <p>24/Maio 19:00</p>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size="4">
-                <p><b>Localização: </b></p>
-              </ion-col>
-              <ion-col>
-                <p>Estádio Municipal de Arouca</p>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <div id="map"></div>
-            </ion-row>
-          </ion-col>
+          <div *ngIf="jogo">
+            <app-info-geral [jogo]="jogo" style="z-index: 99;"></app-info-geral>
+          </div>
         </swiper-slide>
         <swiper-slide>
           <ion-col>
-          <ion-row>
-            <h3>Arouca</h3>
-          </ion-row>
-          <ion-row>
-            <h6>Guarda-Redes</h6>
-            <ion-col size="5">
-              <app-info-jogador></app-info-jogador>
-            </ion-col>
-            <ion-col size="5">
-              <app-info-jogador></app-info-jogador>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <h6>Defesas</h6>
-            <ion-col size="5">
-              <app-info-jogador></app-info-jogador>
-            </ion-col>
-            <ion-col size="5">
-              <app-info-jogador></app-info-jogador>
-            </ion-col>
-            <ion-col size="5">
-              <app-info-jogador></app-info-jogador>
-            </ion-col>
-            <ion-col size="5">
-              <app-info-jogador></app-info-jogador>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <h6>Médios</h6>
-            <ion-col size="5">
-              <app-info-jogador></app-info-jogador>
-            </ion-col>
-            <ion-col size="5">
-              <app-info-jogador></app-info-jogador>
-            </ion-col>
-            <ion-col size="5">
-              <app-info-jogador></app-info-jogador>
-            </ion-col>
-            <ion-col size="5">
-              <app-info-jogador></app-info-jogador>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <h6>Avançados</h6>
-            <ion-col size="5">
-              <app-info-jogador></app-info-jogador>
-            </ion-col>
-          </ion-row>
-        </ion-col>
+            <div *ngIf="jogo is not null" >
+              <app-info-plantel [jogo]="jogo"></app-info-plantel>
+            </div>
+          </ion-col>
         </swiper-slide>
         <swiper-slide>
           <ion-col>
@@ -230,5 +141,4 @@
         </ion-col>
         </swiper-slide>
     </swiper-container>
-
 </ion-content>

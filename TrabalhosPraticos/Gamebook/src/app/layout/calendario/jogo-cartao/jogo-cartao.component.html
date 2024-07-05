@@ -1,0 +1,22 @@
+<ion-row style="background-color: white; border-radius: 20px; margin-top: 10px; margin-left: 16px; margin-right: 16px; color: black; ">
+ <ion-col (click)="goToInfoGamePage()">
+  <ion-row>
+  <ion-col size="1.5" style="display: flex; justify-content: center; align-items: center;">
+    <img src={{logotipoEquipaCasa}} style="width: 50px; border-radius: 50%;">
+  </ion-col>
+  <ion-col size="1.5" style="display: flex; justify-content: center; align-items: center;">
+    <img src={{logotipoEquipaVisitante}} style="width: 50px; border-radius: 50%;">
+  </ion-col>
+  <ion-col>
+    <ion-row>
+      {{jogo.equipaCasa}} - {{jogo.equipaVisitante}}
+    </ion-row>
+    <ion-row>{{jogo.data | date: 'dd-MM-yyyy HH:mm'}}</ion-row>
+  </ion-col>
+</ion-row>
+</ion-col >
+<ion-col (click)='createNotification()'size="2.5" *ngIf="!jogo.resultado" style="background-color: cadetblue; display: flex; justify-content: center; align-items: center; border-radius: 0px 20px 20px 0px;">
+  <ion-icon name="notifications-outline" style="font-size: 24px;  "></ion-icon>
+</ion-col>
+<ion-col size="2.5" *ngIf="jogo.resultado" style="display: flex; justify-content: center; align-items: center; ">( {{jogo.resultado.golosCasa}} - {{jogo.resultado.golosVisitante}} )</ion-col>
+</ion-row>

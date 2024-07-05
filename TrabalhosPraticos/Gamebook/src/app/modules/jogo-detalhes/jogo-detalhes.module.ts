@@ -7,6 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { JogoDetalhesPageRoutingModule } from './jogo-detalhes-routing.module';
 
 import { JogoDetalhesPage } from './jogo-detalhes.page';
+import { InfoJogadorComponent } from 'src/app/layout/info-jogo/info-plantel/info-jogador/info-jogador.component';
+import { InfoPlantelComponent } from 'src/app/layout/info-jogo/info-plantel/info-plantel.component';
+import { InfoEquipasComponent } from 'src/app/layout/info-jogo/info-equipas/info-equipas.component';
+import { InfoGeralComponent } from 'src/app/layout/info-jogo/info-geral/info-geral.component';
 
 @NgModule({
   imports: [
@@ -14,9 +18,9 @@ import { JogoDetalhesPage } from './jogo-detalhes.page';
     FormsModule,
     IonicModule,
     JogoDetalhesPageRoutingModule,
-    IonicModule
+    IonicModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [JogoDetalhesPage]
+  declarations: [JogoDetalhesPage, InfoJogadorComponent, InfoPlantelComponent, InfoEquipasComponent, InfoGeralComponent]
 })
 export class JogoDetalhesPageModule {}

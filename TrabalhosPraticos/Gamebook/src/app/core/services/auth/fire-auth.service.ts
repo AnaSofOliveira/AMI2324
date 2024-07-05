@@ -50,7 +50,6 @@ export class FireAuthService {
         /*this.firebaseService.unsubscribeOnLogOut();*/
         resolve();
       }).catch((error: any) => {
-        console.log(error);
         reject();
       });
     })

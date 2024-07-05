@@ -23,10 +23,8 @@ export class LoginSocialPage {
 
   loginWithGoogle() {
     this.authService.loginWithGoogle().then(res => {
-      console.log("Resultado: " + res);
       this.goToHomePage()
     }, err => {
-      console.log("Erro: " + err);
       this.errorMessage = "Erro ao efetuar o login!"
     })
   }

@@ -1,0 +1,31 @@
+<ion-col>
+  <ion-row>
+    <h5>Todos os Jogos</h5>
+  </ion-row>
+  <div *ngFor="let jogo of jogos">
+    <app-jogo-cartao [jogo]="jogo" style="width: 100%;"></app-jogo-cartao>
+  </div>
+</ion-col>
+
+<!-- <div>
+  <div **ngIf="equipasFavoritas">
+    <h3>Equipas Favoritas</h3>
+    <div **ngFor="let favorito of equipasFavoritas">
+      <h5>{{favorito.nome}}</h5>
+      <div **ngFor="let jogos of jogosFavoritos">
+        <div **ngFor="let jogo of jogos">
+          <img> // Imagem da equipaCasa
+          <img> // Imagem da equipaVisitante
+          <div>
+            <div>{{jogo.equipaCasa}} - {{jogo.equipaVisitante}}</div>
+            <div>{{jogo.data}}</div>
+          </div>
+          <div **ngIf="jogo.resultado is not null">( {{jogo.resultado.golosCasa}} - {{jogo.resultado.golosVisitante}} )</div>
+          <div **ngIf="jogo.resultado is null">
+             // icon de notificação <ion-icon></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

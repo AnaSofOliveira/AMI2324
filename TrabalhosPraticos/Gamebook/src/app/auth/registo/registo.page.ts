@@ -45,10 +45,8 @@ export class RegistoPage implements OnInit{
 
   register(value: {email: any; password: any;}){
     this.authService.register(value).then(res => {
-      console.log("Resultado: " + res);
       this.goToHomePage()
     }, err => {
-      console.log("Erro: " + err);
       this.errorMessage = "Erro no registo do utilizador!"
     })
   }

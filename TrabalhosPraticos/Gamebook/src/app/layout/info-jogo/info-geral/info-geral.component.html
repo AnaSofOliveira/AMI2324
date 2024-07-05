@@ -1,0 +1,29 @@
+<ion-col>
+  <ion-row>
+    <ion-col size="4">
+      <p><b>Competição: </b> </p>
+    </ion-col>
+    <ion-col>
+      <p>{{jogo.competicao}}</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4">
+      <p><b>Data/hora: </b></p>
+    </ion-col>
+    <ion-col>
+      <p>{{jogo.data | date: 'dd-MM-yyyy HH:mm'}}</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4">
+      <p><b>Localização: </b></p>
+    </ion-col>
+    <ion-col>
+      <p>{{jogo.estadio.nome}}</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <div id="map"></div>
+  </ion-row>
+</ion-col>
