@@ -4,6 +4,7 @@ import { FirestoreService } from 'src/app/core/services/database/firestore.servi
 import { IonCol, IonRow, IonIcon } from "@ionic/angular/standalone";
 import { CommonModule, NgFor} from '@angular/common';
 import { JogoCartaoComponent } from './jogo-cartao/jogo-cartao.component';
+import { FireAuthService } from 'src/app/core/services/auth/fire-auth.service';
 
 @Component({
   selector: 'app-calendario',
@@ -15,7 +16,8 @@ import { JogoCartaoComponent } from './jogo-cartao/jogo-cartao.component';
 export class CalendarioComponent  implements OnInit {
 
   jogos!: Jogo[];
-  jogosFavoritos!: Jogo[];
+  competicoes: string[] = [];
+  equipasFavoritas: string[] = [];
 
   constructor(private fireService: FirestoreService) { }
 
@@ -39,8 +41,31 @@ export class CalendarioComponent  implements OnInit {
             equipaVisitante: e.payload.doc.data()['equipaVisitante'],
             resultado: e.payload.doc.data()['resultado']
           } as Jogo;
-      }).sort(jogo => jogo.data.getTime());
+      });
+      this.jogos.forEach(jogo => {
+        if (!this.competicoes.includes(jogo.competicao)) {
+          this.competicoes.push(jogo.competicao);
+        }
+      });
+
+
+      this.fireService.getEquipasFavoritas().subscribe((data: any) => {
+        data.forEach((equipa: any) => {
+          this.equipasFavoritas.push(equipa.nome);
+        });
+      });
+
     });
   }
 
+  filterJogoInCompeticao(jogos: Jogo[], competicao: string): Jogo[] {
+    console.log("filterJogoInCompeticao");
+    console.log(jogos);
+    console.log(competicao);
+    return jogos.filter(jogo => jogo.competicao == competicao);
+  }
+
+  isJogoFavorito(jogo: Jogo): boolean {
+    return this.equipasFavoritas.includes(jogo.equipaCasa) || this.equipasFavoritas.includes(jogo.equipaVisitante);
+  }
 }
