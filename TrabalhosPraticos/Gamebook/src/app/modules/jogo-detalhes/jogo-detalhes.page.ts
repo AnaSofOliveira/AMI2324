@@ -1,21 +1,27 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { Map, latLng, tileLayer, Layer, marker, Control } from 'leaflet';
 import { FirestoreService } from 'src/app/core/services/database/firestore.service';
 import { Jogo } from 'src/app/core/entities/jogo';
+import Swiper from 'swiper';
+import { SwiperOptions } from 'swiper/types/swiper-options';
+
 
 @Component({
   selector: 'app-jogo-detalhes',
   templateUrl: './jogo-detalhes.page.html',
   styleUrls: ['./jogo-detalhes.page.scss'],
 })
-export class JogoDetalhesPage {
+export class JogoDetalhesPage /* implements AfterViewInit */{
 
-  @ViewChild('swiper') swiperRef: ElementRef | undefined;
+
+  /* @ViewChild('swiper') swiperRef: ElementRef | undefined; */
+  @ViewChild('swiper', { static: false }) swiperRef!: ElementRef;
   selected_index = 0;
   /* map!: Map; */
   gameKey!: string;
   jogo!: Jogo;
+  swiper?: Swiper;
 
   constructor(private route: ActivatedRoute, private router: Router, private fireService: FirestoreService) {
     this.route.paramMap.subscribe(params => {
@@ -29,9 +35,33 @@ export class JogoDetalhesPage {
       });
     });
   }
+/*
+  ngAfterViewInit() {
+    this.initializeSwiper();
+  }
+
+  initializeSwiper() {
+    const swiperOptions: SwiperOptions = {
+      on: {
+        init: () => console.log('swiper initialized'),
+        slideChange: () => this.onSlideChange(),
+      },
+    };
+    this.swiper = new Swiper(this.swiperRef!.nativeElement, swiperOptions);
+    this.swiper.on('slideChange', function () {
+      console.log('slide changed');
+    });
+  } */
 
   onSlideChange(){
     this.selected_index = this.swiperRef?.nativeElement.swiper.activeIndex;
+    console.log('onSlideChange', this.selected_index);
+  }
+
+  slideTo(index: number) {
+    console.log('slideTo', index);
+    console.log(this.swiper);
+    this.swiperRef?.nativeElement.swiper.slideTo(index);
   }
 
 /*

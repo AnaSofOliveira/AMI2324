@@ -4,16 +4,16 @@
   </div>
   <ion-row>
     <ion-col size="4" style="display: flex; justify-content: center;">
-      <p>Geral</p>
+      <p [ngClass]="{ 'selected-class': selected_index === 0 }" (click)="slideTo(0)">Geral</p>
     </ion-col>
     <ion-col size="4" style="display: flex; justify-content: center;">
-      <p>Plantel</p>
+      <p [ngClass]="{ 'selected-class': selected_index === 1 }" (click)="slideTo(1)">Plantel</p>
     </ion-col>
     <ion-col size="4" style="display: flex; justify-content: center;">
-      <p>Resultados</p>
+      <p [ngClass]="{ 'selected-class': selected_index === 2 }" (click)="slideTo(2)">Resultados</p>
     </ion-col>
   </ion-row>
-      <swiper-container #swiper (slidechange)="onSlideChange()">
+      <swiper-container #swiper (swiperslidechange)="onSlideChange()">
         <swiper-slide>
           <div *ngIf="jogo">
             <app-info-geral [jogo]="jogo" style="z-index: 99;"></app-info-geral>
