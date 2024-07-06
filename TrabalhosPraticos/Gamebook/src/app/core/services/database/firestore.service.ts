@@ -15,6 +15,7 @@ import { Jogador } from '../../entities/jogador';
 })
 export class FirestoreService {
 
+
   constructor(private af: AngularFirestore) {
     /* this.buildFirestoreData(); */
   }
@@ -78,6 +79,11 @@ export class FirestoreService {
         console.error('Erro ao atualizar equipas favoritas: ', error);
       });
     });
+  }
+
+  getEquipasFavoritas() {
+    let currentUser = firebase.auth().currentUser;
+    return this.af.collection('utilizadores').doc(currentUser!.uid).collection('equipasFavoritas').valueChanges();
   }
 
   obterJogosPorCompeticao(competicao: string) {
