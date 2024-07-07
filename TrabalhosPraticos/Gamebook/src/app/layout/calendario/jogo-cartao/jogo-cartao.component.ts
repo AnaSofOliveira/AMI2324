@@ -2,16 +2,12 @@ import { FirestoreService } from 'src/app/core/services/database/firestore.servi
 import { Component, Input, OnInit } from '@angular/core';
 import { Jogo } from 'src/app/core/entities/jogo';
 import { Equipa } from 'src/app/core/entities/equipa';
-import { IonCol, IonRow, IonIcon, IonContent } from "@ionic/angular/standalone";
-import { CommonModule, NgFor} from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jogo-cartao',
   templateUrl: './jogo-cartao.component.html',
   styleUrls: ['./jogo-cartao.component.scss'],
-  standalone: true,
-  imports: [IonContent, IonCol, IonRow, IonIcon, NgFor, CommonModule]
 })
 export class JogoCartaoComponent  implements OnInit {
 
