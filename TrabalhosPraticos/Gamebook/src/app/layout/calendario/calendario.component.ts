@@ -1,17 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Jogo } from 'src/app/core/entities/jogo';
 import { FirestoreService } from 'src/app/core/services/database/firestore.service';
-import { IonCol, IonRow, IonIcon } from "@ionic/angular/standalone";
-import { CommonModule, NgFor} from '@angular/common';
-import { JogoCartaoComponent } from './jogo-cartao/jogo-cartao.component';
-import { FireAuthService } from 'src/app/core/services/auth/fire-auth.service';
 
 @Component({
   selector: 'app-calendario',
   templateUrl: './calendario.component.html',
   styleUrls: ['./calendario.component.scss'],
-  standalone: true,
-  imports: [IonCol, IonRow, IonIcon, NgFor, CommonModule, JogoCartaoComponent]
 })
 export class CalendarioComponent  implements OnInit {
 
@@ -59,9 +53,6 @@ export class CalendarioComponent  implements OnInit {
   }
 
   filterJogoInCompeticao(jogos: Jogo[], competicao: string): Jogo[] {
-    console.log("filterJogoInCompeticao");
-    console.log(jogos);
-    console.log(competicao);
     return jogos.filter(jogo => jogo.competicao == competicao);
   }
 
