@@ -1,4 +1,4 @@
-.sliderDias {
+/* .sliderDias {
   height: 60px;
   display: flex;
   justify-content: center;
@@ -25,4 +25,63 @@
 .selected-class {
   color: antiquewhite;
   text-decoration: underline;
+}
+ */
+
+
+
+ .sliderDias {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    padding: 0 10px;
+  }
+}
+
+
+.sliderJogos{
+  height: 100%;
+}
+
+.selected-class {
+  color: #466730;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
+a{
+  color: #466730;
+}
+
+swiper-slide{
+  padding: 0 16px;
+}
+
+h5{
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+h6{
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+
+}
+ion-col{
+  padding: 0;
+}
+ion-row{
+  padding: 0;
+}
+.comp{
+  margin-left: 16px;
 }
