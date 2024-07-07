@@ -31,15 +31,19 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: '',
+        redirectTo: 'calendario',
       },
       {
-        path: '',
+        path: 'calendario',
         loadChildren: () => import('./modules/home/home.module').then( m => m.HomePageModule)
       },
       {
         path: 'jogo-detalhes/:id',
         loadChildren: () => import('./modules/jogo-detalhes/jogo-detalhes.module').then( m => m.JogoDetalhesPageModule)
+      },
+      {
+        path: 'perfil',
+        loadChildren: () => import('./modules/perfil/perfil.module').then( m => m.PerfilPageModule)
       },
     ],
   },
