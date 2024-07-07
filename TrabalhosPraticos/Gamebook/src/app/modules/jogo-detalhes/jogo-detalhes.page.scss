@@ -4,6 +4,19 @@
 }
 
 .selected-class {
-  color: antiquewhite;
   text-decoration: underline;
+  font-weight: bold;
+}
+
+.options{
+  background-color: #F6F2F2;
+  align-items: center;
+  padding: 4px 16px;
+  a {
+    color: #466730;
+  }
+  ion-col{
+    height: 100%;
+    align-items: center;
+  }
 }
