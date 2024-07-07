@@ -18,7 +18,6 @@ import { InfoGeralComponent } from 'src/app/layout/info-jogo/info-geral/info-ger
     FormsModule,
     IonicModule,
     JogoDetalhesPageRoutingModule,
-    IonicModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [JogoDetalhesPage, InfoJogadorComponent, InfoPlantelComponent, InfoEquipasComponent, InfoGeralComponent]
