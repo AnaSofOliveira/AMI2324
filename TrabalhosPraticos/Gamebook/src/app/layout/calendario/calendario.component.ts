@@ -10,15 +10,16 @@ import * as moment from 'moment';
 })
 export class CalendarioComponent  implements OnInit, AfterViewInit {
 
-
   @ViewChild('sliderDias', { static: false }) sliderDiasRef!: ElementRef;
   @ViewChild('sliderJogos', { static: false }) sliderJogosRef!: ElementRef;
 
   days: string[] = [];
   indexDiasSelecionado: number = 7; // "hoje" is the 8th element (index 7)
   indexJogosSelecionado: number = 7;
+  realDays: moment.Moment[] = [];
 
-  jogos!: Jogo[];
+  todosJogos!: Jogo[];
+  jogosDia: Jogo[] = [];
   competicoes: string[] = [];
   equipasFavoritas: string[] = [];
 
@@ -34,7 +35,7 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
     this.sliderJogosRef?.nativeElement.swiper.slideTo(this.indexJogosSelecionado);
 
     this.fireService.obterTodosJogos().subscribe(data => {
-      this.jogos = data.map(
+      this.todosJogos = data.map(
         (e: {
           payload: {
             doc: {
@@ -53,12 +54,9 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
             resultado: e.payload.doc.data()['resultado']
           } as Jogo;
       });
-      this.jogos.forEach(jogo => {
-        if (!this.competicoes.includes(jogo.competicao)) {
-          this.competicoes.push(jogo.competicao);
-        }
-      });
 
+      this.jogosDia = this.filterJogosInDay(this.todosJogos, this.realDays[this.indexDiasSelecionado]);
+      this.updateCompeticoesDia();
 
       this.fireService.getEquipasFavoritas().subscribe((data: any) => {
         data.forEach((equipa: any) => {
@@ -73,14 +71,16 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
     const today = moment();
     for (let i = -7; i <= 7; i++) {
       if (i === 0) {
-        this.days.push('hoje');
+        this.days.push('Hoje');
       } else if (i === -1) {
-        this.days.push('ontem');
+        this.days.push('Ontem');
+
       } else if (i === 1) {
-        this.days.push('amanhã');
+        this.days.push('Amanhã');
       } else {
         this.days.push(today.clone().add(i, 'days').format('D/MMM'));
       }
+      this.realDays.push(today.clone().add(i, 'days'));
     }
   }
 
@@ -99,14 +99,27 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
   }
 
   slideTo(index: number) {
-    console.log('slideTo');
-    console.log(index);
     this.sliderDiasRef?.nativeElement.swiper.slideTo(index);
     this.sliderJogosRef?.nativeElement.swiper.slideTo(index);
+
+    this.jogosDia = this.filterJogosInDay(this.todosJogos, this.realDays[index]);
+    this.updateCompeticoesDia();
+  }
+
+  updateCompeticoesDia(): void {
+    this.jogosDia.forEach(jogo => {
+      if (!this.competicoes.includes(jogo.competicao)) {
+        this.competicoes.push(jogo.competicao);
+      }
+    });
   }
 
   filterJogoInCompeticao(jogos: Jogo[], competicao: string): Jogo[] {
     return jogos.filter(jogo => jogo.competicao == competicao);
+  }
+
+  filterJogosInDay(jogos: Jogo[], dia: moment.Moment): Jogo[] {
+    return jogos.filter(jogo => moment(jogo.data).isSame(dia, 'day'));
   }
 
   isJogoFavorito(jogo: Jogo): boolean {

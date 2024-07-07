@@ -15,7 +15,11 @@
 
 
 .sliderJogos{
-  height: 100%;
+  min-height: 80vh;
+
+  swiper-slide {
+    min-height: 80vh;
+  }
 }
 
 .selected-class {

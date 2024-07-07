@@ -37,7 +37,7 @@ export class JogoCartaoComponent  implements OnInit {
 
 
   goToInfoGamePage() {
-    this.router.navigate(['jogo-detalhes', this.jogo.$key]);
+    this.router.navigate(['home/jogo-detalhes', this.jogo.$key]);
   }
 
 }
