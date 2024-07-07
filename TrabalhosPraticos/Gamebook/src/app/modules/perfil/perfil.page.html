@@ -1,13 +1,25 @@
 <ion-content [fullscreen]="true">
 
-  <ion-icon name="people"></ion-icon>
-
-  <!-- <ion-row>
-    <ion-col *ngIf="user.nome">
-      <ion-input type="text" [(ngModel)]="user.nome"></ion-input>
-    </ion-col>
-    <ion-col *ngIf="user.email">
-      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
-    </ion-col>
-  </ion-row> -->
+  <div class="profileInfo">
+    <ion-row>
+      <ion-icon name="people"></ion-icon>
+    </ion-row>
+    <ion-row>
+      <p>{{user?.email}}</p>
+    </ion-row>
+  </div>
+  <ion-button (click)="logout()">Logout</ion-button>
+  <div class="equipasFavoritas">
+    <ion-row>
+      <h5>Equipas Favoritas</h5>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let equipa of user?.equipasFavoritas">
+        <ion-row>
+          <ion-icon name="star"></ion-icon>
+          <a>{{equipa}}</a>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>
