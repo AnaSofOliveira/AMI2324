@@ -1,0 +1,24 @@
+.sliderDias {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    padding: 0 10px;
+  }
+}
+
+
+.sliderJogos{
+  height: 100%;
+}
+
+.selected-class {
+  color: antiquewhite;
+  text-decoration: underline;
+}

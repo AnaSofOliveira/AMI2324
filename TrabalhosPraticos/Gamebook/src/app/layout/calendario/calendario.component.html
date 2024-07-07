@@ -1,31 +1,49 @@
-<ion-col>
-  <div *ngIf="equipasFavoritas">
-    <ion-row>
-      <h5>Equipas Favoritas</h5>
-    </ion-row>
-    <div *ngIf="equipasFavoritas is not null">
-      <ion-col *ngFor="let competicao of competicoes">
-        <h6>{{competicao}}</h6>
-        <ion-row *ngFor="let jogo of filterJogoInCompeticao(jogos, competicao)">
-          <app-jogo-cartao *ngIf="isJogoFavorito(jogo)" [jogo]="jogo" style="width: 100%;"></app-jogo-cartao>
-        </ion-row>
-      </ion-col>
+<swiper-container #sliderDias class='sliderDias'
+    [slidesPerView]="3"
+    [spaceBetween]="10"
+    [slidesPerGroup]="1"
+    (swiperslidechange)="onSlideDiasChange()">
+  <swiper-slide *ngFor="let day of days; let i = index">
+    <div [ngClass]="{ 'selected-class': indexDiasSelecionado === i }">
+      {{ day }}
     </div>
-  </div>
+  </swiper-slide>
+</swiper-container>
 
+<swiper-container #sliderJogos
+    [slidesPerView]="1"
+    [spaceBetween]="10"
+    [slidesPerGroup]="1"
+    (swiperslidechange)="onSlideJogosChange()">
+  <swiper-slide *ngFor="let day of days">
+    <ion-col>
+      <div *ngIf="equipasFavoritas">
+        <ion-row>
+          <h5>Equipas Favoritas</h5>
+        </ion-row>
+        <div *ngIf="equipasFavoritas is not null">
+          <ion-col *ngFor="let competicao of competicoes">
+            <h6>{{competicao}}</h6>
+            <ion-row *ngFor="let jogo of filterJogoInCompeticao(jogos, competicao)">
+              <app-jogo-cartao *ngIf="isJogoFavorito(jogo)" [jogo]="jogo" style="width: 100%;"></app-jogo-cartao>
+            </ion-row>
+          </ion-col>
+        </div>
+      </div>
 
-  <ion-row>
-    <h5>Todos os Jogos</h5>
-  </ion-row>
-
-  <div *ngIf="competicoes">
-    <ion-col *ngFor="let competicao of competicoes">
-      <h6>{{competicao}}</h6>
-      <ion-row *ngFor="let jogo of filterJogoInCompeticao(jogos, competicao)">
-        <app-jogo-cartao [jogo]="jogo" style="width: 100%;"></app-jogo-cartao>
+      <ion-row>
+        <h5>Todos os Jogos</h5>
       </ion-row>
+
+      <div *ngIf="competicoes">
+        <ion-col *ngFor="let competicao of competicoes">
+          <h6>{{competicao}}</h6>
+          <ion-row *ngFor="let jogo of filterJogoInCompeticao(jogos, competicao)">
+            <app-jogo-cartao [jogo]="jogo" style="width: 100%;"></app-jogo-cartao>
+          </ion-row>
+        </ion-col>
+      </div>
     </ion-col>
-  </div>
+  </swiper-slide>
+</swiper-container>
 
-
-</ion-col>
