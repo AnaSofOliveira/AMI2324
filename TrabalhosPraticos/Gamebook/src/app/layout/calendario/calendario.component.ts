@@ -18,7 +18,7 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
   indexJogosSelecionado: number = 7;
   realDays: moment.Moment[] = [];
 
-  todosJogos!: Jogo[];
+  todosJogos: Jogo[] = [];
   jogosDia: Jogo[] = [];
   competicoes: string[] = [];
   equipasFavoritas: string[] = [];
@@ -27,6 +27,8 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.slideTo(this.indexDiasSelecionado);
+    this.jogosDia = this.filterJogosInDay(this.todosJogos, this.realDays[this.indexDiasSelecionado]);
+    this.updateCompeticoesDia();
   }
 
   ngOnInit() {
@@ -54,9 +56,6 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
             resultado: e.payload.doc.data()['resultado']
           } as Jogo;
       });
-
-      this.jogosDia = this.filterJogosInDay(this.todosJogos, this.realDays[this.indexDiasSelecionado]);
-      this.updateCompeticoesDia();
 
       this.fireService.getEquipasFavoritas().subscribe((data: any) => {
         data.forEach((equipa: any) => {
