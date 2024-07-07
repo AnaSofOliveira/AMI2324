@@ -1,0 +1,13 @@
+<ion-content>
+  <swiper-container #daySlider
+    [slidesPerView]="3"
+    [spaceBetween]="10"
+    [slidesPerGroup]="1"
+    (swiperslidechange)="onSlideChange()">
+    <swiper-slide *ngFor="let day of days; let i = index">
+      <div [ngClass]="{ 'selected-class': selectedDayIndex === i-1 }">
+        {{ day }}
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>
