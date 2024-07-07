@@ -58,3 +58,16 @@ ion-row{
 .comp{
   margin-left: 16px;
 }
+
+
+.semJogos{
+  height: 80vh;
+  font-size: 16px;
+
+  ion-row, ion-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
