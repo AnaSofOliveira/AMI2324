@@ -15,7 +15,6 @@ import { Jogador } from '../../entities/jogador';
 })
 export class FirestoreService {
 
-
   constructor(private af: AngularFirestore) {
     /* this.buildFirestoreData(); */
   }
@@ -68,6 +67,20 @@ export class FirestoreService {
   adicionarJogo(jogo: Jogo) {
     return this.af.collection('competicoes').doc(Md5.hashStr(jogo.competicao)).collection('jogos').add(jogo);
   }
+
+  adicionarUtilizador(email: string, uid: string) {
+    let utilizador: Utilizador = {
+      email: email,
+      equipasFavoritas: [],
+    }
+
+    this.af.collection('utilizadores').doc(uid).set(utilizador).then(() => {
+      console.log('Utilizador adicionado com sucesso');
+    }).catch(error => {
+      console.error('Erro ao adicionar utilizador: ', error);
+    });
+  }
+
 
   adicionarFavoritos(equipas: Equipa[]) {
     let currentUser = firebase.auth().currentUser;

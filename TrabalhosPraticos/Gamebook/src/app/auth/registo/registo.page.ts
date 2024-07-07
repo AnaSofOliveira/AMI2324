@@ -8,6 +8,8 @@ import { MatButton } from '@angular/material/button';
 import { FireAuthService } from 'src/app/core/services/auth/fire-auth.service';
 import { FormBuilder, FormGroup, Validators, FormControl, FormsModule, FormRecord, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FirestoreService } from 'src/app/core/services/database/firestore.service';
+import { Utilizador } from 'src/app/core/entities/utilizador';
 
 @Component({
   selector: 'app-registo',
@@ -31,7 +33,7 @@ export class RegistoPage implements OnInit{
     ]
   };
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private authService: FireAuthService) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private authService: FireAuthService, private fireService: FirestoreService) {
   }
 
   ngOnInit(): void {
@@ -45,6 +47,7 @@ export class RegistoPage implements OnInit{
 
   register(value: {email: any; password: any;}){
     this.authService.register(value).then(res => {
+      this.fireService.adicionarUtilizador(value.email, res.user?.uid);
       this.goToHomePage()
     }, err => {
       this.errorMessage = "Erro no registo do utilizador!"
