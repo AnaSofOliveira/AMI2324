@@ -45,6 +45,10 @@ const routes: Routes = [
         path: 'perfil',
         loadChildren: () => import('./modules/perfil/perfil.module').then( m => m.PerfilPageModule)
       },
+      {
+        path: 'classificacoes',
+        loadChildren: () => import('./modules/classificacoes/classificacoes.module').then( m => m.ClassificacoesPageModule)
+      },
     ],
   },
 
