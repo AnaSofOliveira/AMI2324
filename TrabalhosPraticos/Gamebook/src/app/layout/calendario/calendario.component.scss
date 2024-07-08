@@ -1,4 +1,4 @@
- .sliderDias {
+.sliderDias {
   height: 60px;
   display: flex;
   justify-content: center;
@@ -69,5 +69,22 @@ ion-row{
     justify-content: center;
     align-items: center;
     width: 100%;
+  }
+}
+
+.noGames{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  a {
+    font-size: 26px;
+    color: rgba(70, 103, 48, 0.5);
+    font-weight: bold;
+  }
+  ion-icon {
+    font-size: 200px;
+    opacity: 0.5;
   }
 }

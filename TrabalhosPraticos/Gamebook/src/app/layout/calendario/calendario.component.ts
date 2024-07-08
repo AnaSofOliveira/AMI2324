@@ -106,6 +106,7 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
   }
 
   updateCompeticoesDia(): void {
+    this.competicoes = [];
     this.jogosDia.forEach(jogo => {
       if (!this.competicoes.includes(jogo.competicao)) {
         this.competicoes.push(jogo.competicao);
