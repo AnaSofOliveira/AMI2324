@@ -15,12 +15,9 @@ import { Jogador } from '../../entities/jogador';
 })
 export class FirestoreService {
 
-
   constructor(private af: AngularFirestore) {
     /* this.buildFirestoreData(); */
   }
-
-
 
   getJogo(codigoJogo: string): any {
     //return this.af.doc('jogos/' + codigoJogo).snapshotChanges();
@@ -34,13 +31,6 @@ export class FirestoreService {
 
   getJogadoresFromEquipa(equipa: string) {
     return this.af.collection('equipas').doc(Md5.hashStr(equipa)).valueChanges();
-  }
-
-
-  obterJogosFavoritos(): Jogo[] {
-    // Obter equipas favoritas
-    // Obter jogos das equipas favoritas
-    throw new Error('Method not implemented.');
   }
 
   obterEquipa(nomeEquipa: string) {
@@ -255,7 +245,7 @@ export class FirestoreService {
       },
       equipaCasa: 'Benfica',
       equipaVisitante: 'Sporting',
-      data: new Date('2021-10-03T19:00:00'),
+      data: new Date('2024-07-03T19:00:00'),
       resultado: {
         golosCasa: 1,
         golosVisitante: 2
@@ -273,7 +263,7 @@ export class FirestoreService {
       },
       equipaCasa: 'Sporting',
       equipaVisitante: 'Porto',
-      data: new Date('2024-06-29T19:00:00'),
+      data: new Date('2024-07-05T19:00:00'),
       resultado: {
         golosCasa: 2,
         golosVisitante: 1
@@ -290,7 +280,7 @@ export class FirestoreService {
       },
       equipaCasa: 'Porto',
       equipaVisitante: 'Sporting Braga',
-      data: new Date('2024-07-03T19:00:00'),
+      data: new Date('2024-07-10T20:00:00'),
       resultado: null
     };
 
@@ -305,9 +295,10 @@ export class FirestoreService {
       },
       equipaCasa: 'Benfica',
       equipaVisitante: 'Porto',
-      data: new Date('2024-07-03T19:00:00'),
+      data: new Date('2024-07-11T19:00:00'),
       resultado: null
     }
+
 
     /* Jogos Taça de Portugal */
 
@@ -321,7 +312,7 @@ export class FirestoreService {
       },
       equipaCasa: 'Benfica',
       equipaVisitante: 'Sporting Braga',
-      data: new Date('2022-02-15T19:00:00'),
+      data: new Date('2024-07-11T20:00:00'),
       resultado: null
     };
 
@@ -335,7 +326,7 @@ export class FirestoreService {
       },
       equipaCasa: 'Sporting',
       equipaVisitante: 'Porto',
-      data: new Date('2022-02-16T19:00:00'),
+      data: new Date('2024-07-12T19:00:00'),
       resultado: null
     };
 
@@ -349,7 +340,7 @@ export class FirestoreService {
       },
       equipaCasa: 'Porto',
       equipaVisitante: 'Benfica',
-      data: new Date('2022-02-22T19:00:00'),
+      data: new Date('2024-07-12T19:00:00'),
       resultado: null
     };
 
@@ -363,7 +354,138 @@ export class FirestoreService {
       },
       equipaCasa: 'Sporting Braga',
       equipaVisitante: 'Sporting',
-      data: new Date('2022-02-23T19:00:00'),
+      data: new Date('2024-07-13T19:00:00'),
+      resultado: null
+    };
+
+
+
+    let jogo9: Jogo = {
+      $key: '',
+      competicao: 'Liga NOS',
+      estadio: {
+      nome: 'Estádio José Alvalade',
+      latitude: 38.761,
+      longitude: -9.161
+      },
+      equipaCasa: 'Sporting',
+      equipaVisitante: 'Benfica',
+      data: new Date('2024-07-01T19:00:00'),
+      resultado: {
+      golosCasa: 2,
+      golosVisitante: 0
+      }
+    };
+
+    let jogo10: Jogo = {
+      $key: '',
+      competicao: 'Liga NOS',
+      estadio: {
+        nome: 'Estádio Municipal de Braga',
+        latitude: 41.550,
+        longitude: -8.431
+      },
+      equipaCasa: 'Sporting Braga',
+      equipaVisitante: 'Porto',
+      data: new Date('2024-07-02T19:00:00'),
+      resultado: null
+    };
+
+    let jogo11: Jogo = {
+      $key: '',
+      competicao: 'Liga NOS',
+      estadio: {
+        nome: 'Estádio da Luz',
+        latitude: 38.752,
+        longitude: -9.184
+      },
+      equipaCasa: 'Benfica',
+      equipaVisitante: 'Sporting Braga',
+      data: new Date('2024-07-03T19:00:00'),
+      resultado: null
+    };
+
+    let jogo12: Jogo = {
+      $key: '',
+      competicao: 'Liga NOS',
+      estadio: {
+        nome: 'Estádio José Alvalade',
+        latitude: 38.761,
+        longitude: -9.161
+      },
+      equipaCasa: 'Sporting',
+      equipaVisitante: 'Porto',
+      data: new Date('2024-07-04T19:00:00'),
+      resultado: null
+    };
+
+    let jogo13: Jogo = {
+      $key: '',
+      competicao: 'Liga NOS',
+      estadio: {
+        nome: 'Estádio do Dragão',
+        latitude: 41.161,
+        longitude: -8.583
+      },
+      equipaCasa: 'Porto',
+      equipaVisitante: 'Benfica',
+      data: new Date('2024-07-05T19:00:00'),
+      resultado: null
+    };
+
+    let jogo14: Jogo = {
+      $key: '',
+      competicao: 'Liga NOS',
+      estadio: {
+        nome: 'Estádio Municipal de Braga',
+        latitude: 41.550,
+        longitude: -8.431
+      },
+      equipaCasa: 'Sporting Braga',
+      equipaVisitante: 'Sporting',
+      data: new Date('2024-07-06T19:00:00'),
+      resultado: null
+    };
+
+    let jogo15: Jogo = {
+      $key: '',
+      competicao: 'Liga NOS',
+      estadio: {
+        nome: 'Estádio da Luz',
+        latitude: 38.752,
+        longitude: -9.184
+      },
+      equipaCasa: 'Benfica',
+      equipaVisitante: 'Porto',
+      data: new Date('2024-07-07T19:00:00'),
+      resultado: null
+    };
+
+    let jogo16: Jogo = {
+      $key: '',
+      competicao: 'Liga NOS',
+      estadio: {
+        nome: 'Estádio José Alvalade',
+        latitude: 38.761,
+        longitude: -9.161
+      },
+      equipaCasa: 'Sporting',
+      equipaVisitante: 'Sporting Braga',
+      data: new Date('2024-07-08T19:00:00'),
+      resultado: null
+    };
+
+    let jogo17: Jogo = {
+      $key: '',
+      competicao: 'Liga NOS',
+      estadio: {
+        nome: 'Estádio do Dragão',
+        latitude: 41.161,
+        longitude: -8.583
+      },
+      equipaCasa: 'Porto',
+      equipaVisitante: 'Benfica',
+      data: new Date('2024-07-09T19:00:00'),
       resultado: null
     };
 
@@ -393,7 +515,33 @@ export class FirestoreService {
     this.adicionarJogo(jogo8).then((docRef) => {
       this.updateJogo(docRef.id, jogo8);
     });
-
+    this.adicionarJogo(jogo9).then((docRef) => {
+      this.updateJogo(docRef.id, jogo9);
+    });
+    this.adicionarJogo(jogo10).then((docRef) => {
+      this.updateJogo(docRef.id, jogo10);
+    });
+    this.adicionarJogo(jogo11).then((docRef) => {
+      this.updateJogo(docRef.id, jogo11);
+    });
+    this.adicionarJogo(jogo12).then((docRef) => {
+      this.updateJogo(docRef.id, jogo12);
+    });
+    this.adicionarJogo(jogo13).then((docRef) => {
+      this.updateJogo(docRef.id, jogo13);
+    });
+    this.adicionarJogo(jogo14).then((docRef) => {
+      this.updateJogo(docRef.id, jogo14);
+    });
+    this.adicionarJogo(jogo15).then((docRef) => {
+      this.updateJogo(docRef.id, jogo15);
+    });
+    this.adicionarJogo(jogo16).then((docRef) => {
+      this.updateJogo(docRef.id, jogo16);
+    });
+    this.adicionarJogo(jogo17).then((docRef) => {
+      this.updateJogo(docRef.id, jogo17);
+    });
 
     let favoritos = [benfica, sporting_braga];
 
