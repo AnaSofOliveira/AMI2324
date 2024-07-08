@@ -1,25 +1,31 @@
 <ion-content [fullscreen]="true">
-
   <div class="profileInfo">
-    <ion-row>
-      <ion-icon name="people"></ion-icon>
-    </ion-row>
+    <ion-avatar>
+      <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
     <ion-row>
       <p>{{user?.email}}</p>
     </ion-row>
   </div>
-  <ion-button (click)="logout()">Logout</ion-button>
+  <ion-button (click)="logout()" size="small">Logout</ion-button>
   <div class="equipasFavoritas">
     <ion-row>
       <h5>Equipas Favoritas</h5>
     </ion-row>
-    <ion-row>
-      <ion-col *ngFor="let equipa of user?.equipasFavoritas">
+    <ion-row  *ngIf="equipasFavoritas.length > 0">
+      <ion-col *ngFor="let equipa of equipasFavoritas">
         <ion-row>
           <ion-icon name="star"></ion-icon>
-          <a>{{equipa}}</a>
+          <a>{{equipa.nome}}</a>
         </ion-row>
       </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-fab >
+        <ion-fab-button size="small">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
     </ion-row>
   </div>
 </ion-content>

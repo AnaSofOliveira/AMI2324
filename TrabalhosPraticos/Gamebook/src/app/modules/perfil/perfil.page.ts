@@ -13,7 +13,8 @@ import { FirestoreService } from 'src/app/core/services/database/firestore.servi
 })
 export class PerfilPage implements OnInit {
 
-  user?: Utilizador;;
+
+  user?: Utilizador;
   equipasFavoritas: Equipa[] = [];
 
   constructor(private authService: FireAuthService, private fireService: FirestoreService, private router: Router) { }
@@ -21,7 +22,6 @@ export class PerfilPage implements OnInit {
   ngOnInit() {
 
     this.fireService.obterUtilizador().subscribe((data: any) => {
-      console.log(data);
       this.user = data as Utilizador;
     });
 
@@ -35,13 +35,15 @@ export class PerfilPage implements OnInit {
   }
 
   logout() {
-    this.authService.logout().then(() => {
-      this.goToLoginSocial();
+    this.authService.doLogout().then(() => {
+      this.goToSplashPage();
+    }).catch((err) => {
+      console.log("Erro ao realizar logout()");
     });
   }
 
-  goToLoginSocial() {
-    this.router.navigate(['/login-social'], { replaceUrl: true });
+  goToSplashPage() {
+    this.router.navigate(['/splash'], { replaceUrl: true });
   }
 
 }
