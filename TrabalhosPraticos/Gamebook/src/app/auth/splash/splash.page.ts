@@ -28,15 +28,9 @@ export class SplashPage implements OnInit{
     console.log("isLogged");
     console.log(isLogged);
     if (isLogged) {
-      //this.goToCalendarPage()
+      this.goToCalendarPage()
     } else {
-      //this.goToSocialLoginPage();
+      this.goToSocialLoginPage();
     }
-    /* .then((value) => {
-        console.log("isLogIn")
-        console.log(value)
-        //value ? this.router.navigate(['/home'], { replaceUrl: true }) : this.goToSocialLoginPage();
-      })
-      .catch(() => this.goToSocialLoginPage()); */
   }
 }
