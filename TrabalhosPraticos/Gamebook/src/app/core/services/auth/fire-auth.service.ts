@@ -79,7 +79,8 @@ export class FireAuthService {
 
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider } from 'firebase/auth';
+
 
 @Injectable({
   providedIn: 'root'
@@ -109,7 +110,6 @@ export class FireAuthService {
     return new Promise<any> ((resolve, reject) => {
       this.auth.signInWithEmailAndPassword(value.email, value.password)
       .then(
-
         (res: any) => {
           // Assume the token is part of the response, e.g., res.user.getIdToken()
           res.user.getIdToken().then((token: string) => {
@@ -122,17 +122,31 @@ export class FireAuthService {
     })
   }
 
-  logout() {
-    return new Promise<void> ((resolve, reject) => {
+  doLogout(){
+    return new Promise<void>((resolve, reject) => {
       this.auth.signOut().then(() => {
         localStorage.removeItem('authToken');
-        //this.firebaseService.unsubscribeOnLogOut();
         resolve();
       }).catch((error: any) => {
         reject();
       });
     })
   }
+/*
+  logout() {
+    return new Promise<void> ((resolve, reject) => {
+      this.auth.signOut().then(() => {
+        console.log("logout");
+        localStorage.removeItem('authToken');
+        this.firestoreService.unsubscribeOnLogOut();
+        resolve();
+      }).catch((error: any) => {
+        console.log("logout error");
+        console.log(error);
+        reject();
+      });
+    })
+  }*/
 
   isLoggedIn() {
     return !!localStorage.getItem('authToken');
@@ -152,7 +166,4 @@ export class FireAuthService {
     });
   }
 
-  async isLogIn() : Promise<boolean> {
-    return !(await this.auth.currentUser);
-  }
 }
