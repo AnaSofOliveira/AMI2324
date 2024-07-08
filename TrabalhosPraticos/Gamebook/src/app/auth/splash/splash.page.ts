@@ -19,11 +19,24 @@ export class SplashPage implements OnInit{
     this.router.navigate(['/login-social'], { replaceUrl: true });
   }
 
+  goToCalendarPage() {
+    this.router.navigate(['/home'], { replaceUrl: true });
+  }
+
   ngOnInit(): void {
-    this.fireAuthService.isLogIn()
-      .then((value) => {
-        value ? this.router.navigate(['/home'], { replaceUrl: true }) : this.goToSocialLoginPage();
+    let isLogged = this.fireAuthService.isLoggedIn();
+    console.log("isLogged");
+    console.log(isLogged);
+    if (isLogged) {
+      //this.goToCalendarPage()
+    } else {
+      //this.goToSocialLoginPage();
+    }
+    /* .then((value) => {
+        console.log("isLogIn")
+        console.log(value)
+        //value ? this.router.navigate(['/home'], { replaceUrl: true }) : this.goToSocialLoginPage();
       })
-      .catch(() => this.goToSocialLoginPage());
+      .catch(() => this.goToSocialLoginPage()); */
   }
 }
