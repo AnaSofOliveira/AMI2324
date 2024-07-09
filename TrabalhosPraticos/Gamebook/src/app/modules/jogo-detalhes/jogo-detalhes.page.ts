@@ -13,7 +13,9 @@ import { SwiperOptions } from 'swiper/types/swiper-options';
   styleUrls: ['./jogo-detalhes.page.scss'],
 })
 export class JogoDetalhesPage /* implements AfterViewInit */{
-
+  public config: SwiperOptions = {
+    autoHeight: true, // Enable auto height
+  };
 
   /* @ViewChild('swiper') swiperRef: ElementRef | undefined; */
   @ViewChild('swiper', { static: false }) swiperRef!: ElementRef;

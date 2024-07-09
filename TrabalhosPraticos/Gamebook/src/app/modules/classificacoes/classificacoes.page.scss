@@ -61,12 +61,12 @@ h5{
   font-size: 11px;
   font-family: 'Roboto', sans-serif;
   display: flex;
-  justify-content: start;
+  justify-content: end;
 }
 
-.league-table ion-col .teamName{
+.teamName{
   display: flex;
-  justify-content: start;
+  justify-content: start !important;
 }
 
 .league-table .table-header {

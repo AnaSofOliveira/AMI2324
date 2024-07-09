@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { Equipa } from 'src/app/core/entities/equipa';
 import { Jogo } from 'src/app/core/entities/jogo';
 import { FirestoreService } from 'src/app/core/services/database/firestore.service';
@@ -14,7 +15,7 @@ export class InfoEquipasComponent  implements OnInit {
   equipaCasa!: Equipa;
   equipaVisitante!: Equipa;
 
-  constructor(private fireService: FirestoreService) { }
+  constructor(private fireService: FirestoreService, private navCtrl: NavController) { }
 
   ngOnInit() {
 
@@ -37,5 +38,10 @@ export class InfoEquipasComponent  implements OnInit {
         });
       });
     }
+
+
+  goBack() {
+    this.navCtrl.back();
+  }
 
 }

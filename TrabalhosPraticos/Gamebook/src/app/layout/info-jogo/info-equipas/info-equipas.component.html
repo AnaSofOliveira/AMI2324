@@ -23,8 +23,8 @@
 
  <ion-row>
   <ion-col *ngIf="equipaCasa" size="1">
-    <div class="backContainer">
-      <ion-icon name="chevron-back-outline"></ion-icon>
+    <div class="backContainer" >
+      <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
     </div>
   </ion-col>
   <ion-col *ngIf="equipaCasa" size="5">
@@ -47,7 +47,7 @@
     </ion-card>
   </ion-col>
 </ion-row>
-<ion-row>
+<ion-row style="margin-bottom: 8px">
   <ion-col size="1" style="display: flex; justify-content: center; align-items: center;"></ion-col>
   <ion-col *ngIf="equipaCasa" size="5">
     <a>{{equipaCasa.nome}}</a>

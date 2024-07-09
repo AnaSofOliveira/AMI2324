@@ -161,129 +161,117 @@
       <a [ngClass]="{ 'selected-class': selected_index === 2 }" (click)="slideTo(2)">Resultados</a>
     </ion-col>
   </ion-row>
-      <swiper-container #swiper (swiperslidechange)="onSlideChange()">
-        <swiper-slide>
+      <swiper-container #swiper (swiperslidechange)="onSlideChange()" [config]="config">
+        <swiper-slide class="slide1">
           <div *ngIf="jogo">
             <app-info-geral [jogo]="jogo" style="z-index: 99;"></app-info-geral>
           </div>
         </swiper-slide>
-        <swiper-slide>
+        <swiper-slide class="slide2">
           <ion-col>
-            <div *ngIf="jogo is not null" >
+            <div *ngIf="jogo is not null">
               <app-info-plantel [jogo]="jogo"></app-info-plantel>
             </div>
           </ion-col>
         </swiper-slide>
         <swiper-slide>
-          <ion-col>
-          <ion-row>
-            <h3>Arouca</h3>
+          <ion-col class="resultados">
+          <ion-row class="header">
+            <a class="title">Arouca</a>
           </ion-row>
           <ion-row>
-            <ion-col size="3">
-              <p>Arouca</p>
+            <ion-col size="5" class="casa">
+              <a>Arouca</a>
+              <div style="width: 8px"></div>
+              <img src="https://www.zerozero.pt/img/logos/equipas/3555_imgbank_1682582864.png"/>
             </ion-col>
-            <ion-col size="1">
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            <ion-col size="2" class="res">
+              <a>1 - 3</a>
             </ion-col>
-            <ion-col size="4">
-              <p>1 - 3</p>
-            </ion-col>
-            <ion-col size="1">
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-            </ion-col>
-            <ion-col size="3">
-              <p>Vitória SC</p>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col size="3">
-              <p>Benfica</p>
-            </ion-col>
-            <ion-col size="1">
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-            </ion-col>
-            <ion-col size="4">
-              <p>5 - 0</p>
-            </ion-col>
-            <ion-col size="1">
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-            </ion-col>
-            <ion-col size="3">
-              <p>Arouca</p>
+            <ion-col size="5" class="fora">
+              <img src="https://www.zerozero.pt/img/logos/equipas/18_imgbank_1691672368.png" />
+              <div style="width: 8px"></div>
+              <a>Vitória SC</a>
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col size="3">
-              <p>Gil Vicente</p>
+            <ion-col size="5" class="casa">
+              <a>Benfica</a>
+              <div style="width: 8px"></div>
+              <img src="https://www.zerozero.pt/img/logos/equipas/4_imgbank_1683238034.png" />
             </ion-col>
-            <ion-col size="1">
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            <ion-col size="2" class="res">
+              <a>5 - 0</a>
             </ion-col>
-            <ion-col size="4">
-              <p>2 - 2</p>
+            <ion-col size="5" class="fora">
+              <img src="https://www.zerozero.pt/img/logos/equipas/3555_imgbank_1682582864.png" />
+              <div style="width: 8px"></div>
+              <a>Arouca</a>
             </ion-col>
-            <ion-col size="1">
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" class="casa">
+              <a>Gil Vicente</a>
+              <div style="width: 8px"></div>
+              <img src="https://www.zerozero.pt/img/logos/equipas/11_imgbank_1682582593.png" />
             </ion-col>
-            <ion-col size="3">
-              <p>Arouca</p>
+            <ion-col size="2" class="res">
+              <a>2 - 2</a>
+            </ion-col>
+            <ion-col size="5" class="fora">
+              <img src="https://www.zerozero.pt/img/logos/equipas/3555_imgbank_1682582864.png" />
+              <div style="width: 8px"></div>
+              <a>Arouca</a>
             </ion-col>
           </ion-row>
 
 
-          <ion-row>
-            <h3>Benfica</h3>
+          <ion-row class="header">
+            <a class="title">Benfica</a>
           </ion-row>
           <ion-row>
-            <ion-col size="3">
-              <p>Benfica</p>
+            <ion-col size="5" class="casa">
+              <a>Benfica</a>
+              <div style="width: 8px"></div>
+              <img src="https://www.zerozero.pt/img/logos/equipas/4_imgbank_1683238034.png" />
             </ion-col>
-            <ion-col size="1">
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            <ion-col size="2" class="res">
+              <a>1 - 1</a>
             </ion-col>
-            <ion-col size="4">
-              <p>1 - 1</p>
-            </ion-col>
-            <ion-col size="1">
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-            </ion-col>
-            <ion-col size="3">
-              <p>Rio Ave</p>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col size="3">
-              <p>Benfica</p>
-            </ion-col>
-            <ion-col size="1">
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-            </ion-col>
-            <ion-col size="4">
-              <p>5 - 0</p>
-            </ion-col>
-            <ion-col size="1">
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-            </ion-col>
-            <ion-col size="3">
-              <p>Arouca</p>
+            <ion-col size="5" class="fora">
+              <img src="https://www.zerozero.pt/img/logos/equipas/31_imgbank_1682584600.png" />
+              <div style="width: 8px"></div>
+              <a>Rio Ave</a>
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col size="3">
-              <p>Famalicão</p>
+            <ion-col size="5" class="casa">
+              <a>Benfica</a>
+              <div style="width: 8px"></div>
+              <img src="https://www.zerozero.pt/img/logos/equipas/4_imgbank_1683238034.png" />
             </ion-col>
-            <ion-col size="1">
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+            <ion-col size="2" class="res">
+              <a>5 - 0</a>
             </ion-col>
-            <ion-col size="4">
-              <p>2 - 0</p>
+            <ion-col size="5" class="fora">
+              <img src="https://www.zerozero.pt/img/logos/equipas/3555_imgbank_1682582864.png" />
+              <div style="width: 8px"></div>
+              <a>Arouca</a>
             </ion-col>
-            <ion-col size="1">
-              <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" class="casa">
+              <a>Famalicão</a>
+              <div style="width: 8px"></div>
+              <img src="https://www.zerozero.pt/img/logos/equipas/2175_imgbank_1682583693.png" />
             </ion-col>
-            <ion-col size="3">
-              <p>Benfica</p>
+            <ion-col size="2" class="res">
+              <a>2 - 0</a>
+            </ion-col>
+            <ion-col size="5" class="fora">
+              <img src="https://www.zerozero.pt/img/logos/equipas/4_imgbank_1683238034.png" />
+              <div style="width: 8px"></div>
+              <a>Benfica</a>
             </ion-col>
           </ion-row>
         </ion-col>
