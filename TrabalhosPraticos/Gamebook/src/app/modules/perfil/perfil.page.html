@@ -16,16 +16,14 @@
       <ion-col *ngFor="let equipa of equipasFavoritas">
         <ion-row>
           <ion-icon name="star"></ion-icon>
-          <a>{{equipa.nome}}</a>
+          <a>{{equipa}}</a>
         </ion-row>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-fab >
-        <ion-fab-button size="small">
-          <ion-icon name="add"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
+      <ion-fab-button size="small" (click)="abrirModal()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
     </ion-row>
   </div>
 </ion-content>

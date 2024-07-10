@@ -16,6 +16,6 @@ import { ListaEquipasFavoritasComponent } from 'src/app/layout/perfil/lista-equi
     IonicModule,
     PerfilPageRoutingModule
   ],
-  declarations: [PerfilPage, ListaEquipasFavoritasComponent]
+  declarations: [PerfilPage, ListaEquipasFavoritasComponent],
 })
 export class PerfilPageModule {}

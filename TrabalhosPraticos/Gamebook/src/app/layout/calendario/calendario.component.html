@@ -73,15 +73,15 @@
 <swiper-slide *ngFor="let day of days">
  <ion-col>
    <div *ngIf="jogosDia.length > 0">
-     <div *ngIf="equipasFavoritas.length > 0" >
+     <div *ngIf="jogosFavoritos.length > 0" class="jogosFavoritos">
        <ion-row>
          <h5>Equipas Favoritas ></h5>
        </ion-row>
        <div style="margin-left: 16px; margin-bottom: 8px;">
          <ion-col *ngFor="let competicao of competicoes">
            <h6>{{competicao}}</h6>
-           <ion-row *ngFor="let jogo of filterJogoInCompeticao(jogosDia, competicao)">
-             <app-jogo-cartao *ngIf="isJogoFavorito(jogo)" [jogo]="jogo" style="width: 100%;"></app-jogo-cartao>
+           <ion-row *ngFor="let jogo of filterJogoInCompeticao(jogosFavoritos, competicao)">
+             <app-jogo-cartao [jogo]="jogo" style="width: 100%;"></app-jogo-cartao>
            </ion-row>
          </ion-col>
        </div>

@@ -20,6 +20,7 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
 
   todosJogos: Jogo[] = [];
   jogosDia: Jogo[] = [];
+  jogosFavoritos: Jogo[] = [];
   competicoes: string[] = [];
   equipasFavoritas: string[] = [];
 
@@ -33,8 +34,7 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.generateDays();
-    this.sliderDiasRef?.nativeElement.swiper.slideTo(this.indexDiasSelecionado);
-    this.sliderJogosRef?.nativeElement.swiper.slideTo(this.indexJogosSelecionado);
+    this.slideTo(this.indexDiasSelecionado);
 
     this.fireService.obterTodosJogos().subscribe(data => {
       this.todosJogos = data.map(
@@ -57,12 +57,9 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
           } as Jogo;
       });
 
-      this.fireService.getEquipasFavoritas().subscribe((data: any) => {
-        data.forEach((equipa: any) => {
-          this.equipasFavoritas.push(equipa.nome);
-        });
+      this.fireService.obterEquipasFavoritas().subscribe((data: any) => {
+        this.equipasFavoritas = data.equipasFavoritas;
       });
-
     });
   }
 
@@ -95,6 +92,8 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
     this.indexDiasSelecionado = this.indexJogosSelecionado;
 
     this.slideTo(this.indexDiasSelecionado);
+    this.jogosFavoritos = this.filterJogosFavoritos(this.jogosDia);
+
   }
 
   slideTo(index: number) {
@@ -114,6 +113,14 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
     });
   }
 
+  filterJogosFavoritos(jogos: Jogo[]): Jogo[] {
+    console.log('filterJogosFavoritos')
+    console.log(jogos);
+    let favoritos = jogos.filter(jogo => this.isJogoFavorito(jogo));
+    console.log(favoritos);
+    return favoritos;
+  }
+
   filterJogoInCompeticao(jogos: Jogo[], competicao: string): Jogo[] {
     return jogos.filter(jogo => jogo.competicao == competicao);
   }
@@ -123,7 +130,15 @@ export class CalendarioComponent  implements OnInit, AfterViewInit {
   }
 
   isJogoFavorito(jogo: Jogo): boolean {
-    return this.equipasFavoritas.includes(jogo.equipaCasa) || this.equipasFavoritas.includes(jogo.equipaVisitante);
+    console.log('isJogoFavorito');
+    console.log("Equipas Favoritas:", this.equipasFavoritas)
+    console.log("Jogo: ", jogo);
+    console.log("Casa: ", jogo.equipaCasa);
+    console.log("Visitante: ", jogo.equipaVisitante);
+
+    let isFavorito = this.equipasFavoritas.includes(jogo.equipaCasa) || this.equipasFavoritas.includes(jogo.equipaVisitante);
+    console.log(isFavorito);
+    return isFavorito;
   }
 
 }
