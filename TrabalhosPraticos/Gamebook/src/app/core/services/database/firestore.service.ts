@@ -92,9 +92,17 @@ export class FirestoreService {
     return this.af.collection('utilizadores').doc(currentUser!.uid).valueChanges();
   }
 
-  getEquipasFavoritas() {
+  obterEquipasFavoritas() {
     let currentUser = firebase.auth().currentUser;
-    return this.af.collection('utilizadores').doc(currentUser!.uid).collection('equipasFavoritas').valueChanges();
+    return this.af.collection('utilizadores').doc(currentUser!.uid).valueChanges();
+  }
+
+  atualizarEquipasFavoritas(equipas: string[]){
+    console.log('atualizarEquipasFavoritas');
+    console.log(equipas);
+    let currentUser = firebase.auth().currentUser;
+    this.af.collection('utilizadores').doc(currentUser!.uid).delete();
+    return this.af.collection('utilizadores').doc(currentUser!.uid).set({email: currentUser!.email, equipasFavoritas: equipas});
   }
 
   obterJogosPorCompeticao(competicao: string) {
@@ -103,6 +111,10 @@ export class FirestoreService {
 
   obterTodosJogos() {
     return this.af.collectionGroup('jogos').snapshotChanges();
+  }
+
+  obterTodasEquipas() {
+    return this.af.collectionGroup('equipas').snapshotChanges();
   }
 
   obterJogosEmCasaPorEquipa(equipa: string) {
