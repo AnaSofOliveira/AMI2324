@@ -51,6 +51,10 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'modal-equipas-favoritas',
+    loadChildren: () => import('./modules/perfil/modal-equipas-favoritas/modal-equipas-favoritas.module').then( m => m.ModalEquipasFavoritasPageModule)
+  },
 
 
   /* {
