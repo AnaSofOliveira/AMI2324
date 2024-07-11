@@ -1,0 +1,79 @@
+<div class="main">
+  <ion-row>
+    <ion-col>
+      <div *ngIf="jogadoresEquipaCasa.length > 0">
+      <a class="title">{{jogo.equipaCasa}}</a>
+        <div *ngFor="let posicao of posicoes">
+          <ion-col>
+            <a>{{posicao}}</a>
+            <ion-row>
+              <ion-col *ngFor="let jogador of filterPosicaoJogadores(jogadoresEquipaCasa, posicao)" size="6">
+                <app-info-jogador [jogador]="jogador"></app-info-jogador>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+
+    <div style="height: 32px"></div>
+  <ion-row>
+    <ion-col>
+      <div *ngIf="jogadoresEquipaVisitante.length > 0">
+      <a class="title">{{jogo.equipaVisitante}}</a>
+        <div *ngFor="let posicao of posicoes">
+          <ion-col>
+            <a>{{posicao}}</a>
+            <ion-row>
+              <ion-col *ngFor="let jogador of filterPosicaoJogadores(jogadoresEquipaVisitante, posicao)" size="6">
+                  <app-info-jogador [jogador]="jogador"></app-info-jogador>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+  </div>
+  <!-- <ion-row>
+    <h6>Defesas</h6>
+    <ion-row>
+      <div *ngIf="player.position === 'g'">
+        <ion-col size="6" *ngIf="i % 2 === 0">
+          <app-info-jogador [player]="player"></app-info-jogador>
+        </ion-col>
+        <ion-col size="6" *ngIf="i % 2 === 1">
+          <app-info-jogador [player]="player"></app-info-jogador>
+        </ion-col>
+      </div>
+    </ion-row>
+  </ion-row>
+
+  <ion-row>
+    <h6>Médios</h6>
+    <ion-row>
+      <ion-col size="6">
+        <app-info-jogador></app-info-jogador>
+      </ion-col>
+      <ion-col size="6">
+        <app-info-jogador></app-info-jogador>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <app-info-jogador></app-info-jogador>
+      </ion-col>
+      <ion-col size="6">
+        <app-info-jogador></app-info-jogador>
+      </ion-col>
+    </ion-row>
+  </ion-row>
+  <ion-row>
+    <h6>Avançados</h6>
+    <ion-row>
+      <ion-col size="6">
+        <app-info-jogador></app-info-jogador>
+      </ion-col>
+    </ion-row>
+  </ion-row>-->

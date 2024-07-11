@@ -1,0 +1,93 @@
+.sliderDias {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    padding: 0 10px;
+  }
+}
+
+
+.sliderJogos{
+  min-height: 80vh;
+
+  swiper-slide {
+    min-height: 80vh;
+  }
+}
+
+
+.selected-class {
+  color: #466730;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
+a{
+  color: #466730;
+}
+
+swiper-slide{
+  padding: 0 16px;
+}
+
+h5{
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+h6{
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+
+}
+ion-col{
+  padding: 0;
+}
+ion-row{
+  padding: 0;
+}
+.comp{
+  margin-left: 16px;
+}
+
+.jogosFavoritos{
+  margin-bottom:24px;
+}
+
+.semJogos{
+  height: 80vh;
+  font-size: 16px;
+
+  ion-row, ion-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.noGames{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  a {
+    font-size: 26px;
+    color: rgba(70, 103, 48, 0.5);
+    font-weight: bold;
+  }
+  ion-icon {
+    font-size: 200px;
+    opacity: 0.5;
+  }
+}

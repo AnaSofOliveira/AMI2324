@@ -1,0 +1,30 @@
+<app-auth-layout>
+  <div class="content">
+    <div>
+      <h2>Gamebook</h2>
+      <p>Faça login para continuar</p>
+    </div>
+
+    <ion-spinner name="crescent" class="spinner"></ion-spinner>
+
+    <div class="action">
+      <button class="googleBtn" mat-flat-button (click)="loginWithGoogle()">Google</button>
+      <div class="sizer"></div>
+
+      <div class="dividerOr">
+        <mat-divider></mat-divider>
+        <div style="width: 5px;"></div>
+        <a>OU</a>
+        <div style="width: 5px;"></div>
+        <mat-divider></mat-divider>
+      </div>
+
+      <div class="sizer"></div>
+      <div class="links">
+        <p><a (click)="goToLoginPage()">Login</a> se tiver conta criada</p>
+        <p><a (click)="goToRegisterPage()">Registe-se</a> se não tiver uma conta</p>
+      </div>
+
+    </div>
+  </div>
+  </app-auth-layout>
