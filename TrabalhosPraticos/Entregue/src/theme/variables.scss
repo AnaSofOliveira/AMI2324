@@ -1,0 +1,52 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+:root{
+  --ion-color-primary: #466730;
+  --ion-item-background: #fff !important;
+  --ion-color-contrast: #466730 !important;
+}
+
+body{
+  font-family: 'Roboto';
+}
+
+
+ion-spinner {
+  --color: #C7EEA9;
+}
+
+h2{
+  color: white;
+  text-shadow:
+  -1px -1px 0 #466730,
+   1px -1px 0 #466730,
+  -1px  1px 0 #466730,
+   1px  1px 0 #466730;
+}
+
+ion-item{
+  color: #466730;
+  background-color: #C7EEA9;
+}
+
+ion-icon{
+  color: #466730;
+}
+
+
+.registo{
+  align-items: center;
+
+  p{
+    color: white;
+    text-shadow:
+      -1px -1px 0 #466730,
+      1px -1px 0 #466730,
+      -1px  1px 0 #466730,
+      1px  1px 0 #466730;
+      text-size-adjust: 10px;
+  }
+
+
+}
+

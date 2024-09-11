@@ -1,0 +1,13 @@
+.spinner{
+  transform: scale(2)
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 25%;
+  padding-bottom: 30%;
+  align-items: center;
+  height: 100%;
+}

@@ -1,0 +1,48 @@
+<app-auth-layout>
+  <div class="content">
+    <div class="backContainer">
+      <ion-icon name="chevron-back-outline" (click)="goToSocialLoginPage()"></ion-icon>
+    </div>
+    <div>
+      <h2>Registe-se</h2>
+      <h6>Faça o seu registo e descubra uma nova realidade futebolística</h6>
+    </div>
+    <form [formGroup]="validators" (ngSubmit)="register(validators.value)">
+      <ion-col size="12" class="ion-margin-bottom">
+        <ion-input formControlName="email" class="ion-text-left" type="email" label="Email" labelPlacement="stacked" placeholder="Insert your e-mail" fill="outline" shape="round">
+          <ion-icon slot="start" name="mail-outline" aria-hidden="true"></ion-icon>
+        </ion-input>
+
+        <div style="height: 24px;"></div>
+        <ion-input formControlName="password" class="ion-text-left" type="password" label="Palavra-passe" labelPlacement="stacked" placeholder="Insert your password" fill="outline" shape="round" [counter]="true" [maxlength]="20" [clearInput]="true">
+          <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+          <ion-icon slot="end" name="eye" aria-hidden="true"></ion-icon>
+        </ion-input>
+
+        <div style="height: 24px;"></div>
+        <ion-input class="ion-text-left" type="password" label="Confirme a palavra-passe" labelPlacement="stacked" placeholder="Insert your password" fill="outline" shape="round" [counter]="true" [maxlength]="20" [clearInput]="true">
+          <ion-icon slot="start" name="refresh-outline" aria-hidden="true"></ion-icon>
+        </ion-input>
+
+        <button class="googleBtn" mat-flat-button type="submit">Registar</button>
+
+      </ion-col>
+    </form>
+
+    <div class="action">
+      <div class="sizer"></div>
+      <div class="dividerOr">
+        <mat-divider></mat-divider>
+        <div style="width: 5px;"></div>
+        <a>OU</a>
+        <div style="width: 5px;"></div>
+        <mat-divider></mat-divider>
+      </div>
+
+      <div class="sizer"></div>
+      <div class="links">
+        <p><a (click)="goToLoginPage()">Login</a> se tiver conta criada</p>
+      </div>
+    </div>
+  </div>
+  </app-auth-layout>

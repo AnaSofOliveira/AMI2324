@@ -1,0 +1,28 @@
+ <ion-row class="customCard">
+  <ion-col (click)="goToInfoGamePage()" style="padding: 4px">
+   <ion-row>
+   <ion-col size="1.5" class="imgCol">
+     <img src={{logotipoEquipaCasa}}>
+   </ion-col>
+   <ion-col size="1.5" class="imgCol">
+     <img src={{logotipoEquipaVisitante}}>
+   </ion-col>
+   <ion-col style="padding: 0 4px">
+     <ion-row>
+       <a class="match">{{jogo.equipaCasa}} - {{jogo.equipaVisitante}}</a>
+     </ion-row>
+     <ion-row>
+       <a>{{jogo.data | date: 'dd-MM-yyyy HH:mm'}}</a>
+     </ion-row>
+   </ion-col>
+ </ion-row>
+ </ion-col >
+ <ion-col (click)='createNotification()' size="2.5" *ngIf="!jogo.resultado" class="notCol">
+   <ion-icon name="notifications-outline"></ion-icon>
+ </ion-col>
+ <ion-col size="2.5" *ngIf="jogo.resultado" class="imgCol" >
+   <a class="match">
+     ( {{jogo.resultado.golosCasa}} - {{jogo.resultado.golosVisitante}} )
+   </a>
+ </ion-col>
+ </ion-row>

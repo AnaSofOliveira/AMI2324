@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Selecione as Equipas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fecharModal()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let equipa of equipas">
+      <ion-label>{{equipa.nome}}</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="equipa.selected"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="guardarEquipasFavoritas()">Salvar</ion-button>
+</ion-content>

@@ -1,0 +1,38 @@
+<!--<ion-content [fullscreen]="false">-->
+  <div class="content">
+    <div class="profileInfo">
+      <ion-avatar>
+        <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <div style="height: 16px"></div>
+      <ion-row>
+        <a>{{user?.email}}</a>
+      </ion-row>
+      <div style="height: 16px"></div>
+      <ion-button (click)="logout()" size="">
+        <ion-icon name="exit-outline" slot="start"></ion-icon>
+        Logout
+      </ion-button>
+    </div>
+    <div class="equipasFavoritas">
+      <ion-row>
+        <a>Equipas Favoritas</a>
+      </ion-row>
+      <div style="height: 16px"></div>
+      <ion-row *ngIf="equipasFavoritas.length > 0">
+        <ion-col *ngFor="let equipa of equipasFavoritas">
+          <ion-row class="item">
+            <ion-icon name="football-outline" ></ion-icon>
+            <div style="width: 8px"></div>
+            <a>{{equipa}}</a>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </div>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button size="small" (click)="abrirModal()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  <!--</ion-content>-->
+  </div>

@@ -1,0 +1,114 @@
+ion-fab-button {
+  --background: #b7f399;
+  --background-activated: #87d361;
+  --background-hover: #a3e681;
+  --border-radius: 15px;
+  --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --color: black;
+}
+
+.profile-container {
+  text-align: center;
+}
+
+.profile-header {
+  margin-top: 20px;
+}
+
+.profile-header ion-avatar {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+}
+
+.profile-header h2 {
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+.profile-header p {
+  color: #666;
+}
+
+.favorite-teams {
+  margin-top: 20px;
+}
+
+.favorite-teams h3 {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+ion-fab-button {
+  --background: #3880ff;
+}
+
+ion-modal {
+  --height: 80%;
+}
+
+ion-content {
+  height: 100%;
+  --background: #F6F2F2;
+}
+.content{
+  height: 100%;
+  background-color: #F6F2F2;
+}
+
+.profileInfo{
+  margin: 32px 0;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ion-avatar{
+    height: 100px;
+    width: 100px;
+  }
+  ion-button{
+    --border-radius: 15px;
+    --background: #BA1A1A;
+    ion-icon{
+      color: white;
+    }
+  }
+  a{
+    color: black;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+a{
+  color: black;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.equipasFavoritas{
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 16px;
+}
+.item{
+  background-color: #F6F2F2;
+  align-items: center;
+  width: 100%;
+  padding: 16px 8px;
+  ion-icon {
+    font-size: 24px;
+    color: black;
+  }
+  margin-bottom: 16px;
+}
+
+ion-fab-button {
+  --background: #466730;
+  ion-icon {
+    color: white;
+  }
+}

@@ -1,0 +1,93 @@
+.spinner{
+  transform: scale(2);
+  display: none;
+}
+
+.content{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+padding: 16px;
+align-items: center;
+text-align: center;
+height: 100%;
+}
+
+.googleBtn{
+  width: auto;
+background-color: #C7EEA9 !important;
+color: black !important;
+}
+
+.sizer{
+height: 16px;
+}
+
+.dividerOr{
+align-items: center;
+width: 100%;
+}
+
+.mat-divider{
+width: 45%;
+color: white;
+}
+
+.action{
+width: 100%;
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+
+.action div{
+display: flex;
+justify-content: center;
+flex-direction: row;
+}
+
+.action .links{
+flex-direction: column;
+align-items: center;
+width: 100%;
+}
+
+.action .links p{
+margin: 0;
+}
+
+// alterações para o login
+
+form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30%;
+}
+
+ion-input{
+  --background: #ffffff;
+  --border-radius: 50px !important;
+}
+
+ion-icon{
+  font-size: 24px;
+  color: var(--ion-color-primary)
+}
+
+// manter a fonte e tamanho padrão
+a, P{
+  font-size: 14px;
+  font-family: 'roboco', sans-serif;
+}
+
+h6{
+  font-family: 'roboco', sans-serif;
+}
+
+.backContainer{
+  width: 100%;
+  text-align: left;
+}
+
